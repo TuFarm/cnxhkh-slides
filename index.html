@@ -1,0 +1,1026 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Bản chất và chức năng Nhà nước XHCN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@700;800;900&family=Noto+Serif:ital,wght@1,500;1,600&display=swap">
+<style>
+/* Layout: full-screen slides on cream paper; faint bronze-drum rings + Hà Nội skyline in red tint; solid red header/footer bars; red silk on cover and closing.
+   Palette is locked to four colours: dark red, cream, star yellow, ink black. Every other tone is one of these at reduced opacity. */
+:root{
+  --red:#9E0F0F;
+  --cream:#FBF4E2;
+  --star:#F5C518;
+  --ink:#1C1714;
+  --red-12:rgba(158,15,15,.12); --red-25:rgba(158,15,15,.25); --red-06:rgba(158,15,15,.06);
+  --ink-70:rgba(28,23,20,.72); --ink-15:rgba(28,23,20,.15);
+  --cream-30:rgba(251,244,226,.3);
+
+  --f-display:"Montserrat","Be Vietnam Pro",Arial,sans-serif;
+  --f-body:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif;
+  --f-quote:"Noto Serif",Georgia,"Times New Roman",serif;
+
+  /* type scale (relative to body size) */
+  --u:clamp(17px,.72vw + 1vh,29px);
+  --t-xs:.78em; --t-sm:.9em; --t-md:1em; --t-lg:1.22em; --t-h3:1em; --t-h2:clamp(1.55em,1.1em + 1.1vw,2.3em); --t-h1:clamp(1.9em,1.2em + 2.4vw,3.6em);
+  /* spacing scale */
+  --s1:.5em; --s2:1em; --s3:1.6em; --s4:2.4em;
+  --footer:52px;
+  --icon:2.6em;
+  --r:6px;
+  color-scheme:light;
+}
+html,body{height:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:var(--u);line-height:1.55;overflow:hidden;-webkit-tap-highlight-color:transparent}
+*{box-sizing:border-box}
+strong{font-weight:700;color:var(--red)}
+p{margin:0} ul,ol{margin:0;padding:0;list-style:none}
+figure{margin:0}
+
+.deck{position:fixed;inset:0;overflow:hidden}
+.slide{position:absolute;inset:0;font-size:calc(var(--u) * var(--fit,1));background:var(--cream);overflow:hidden;opacity:0;visibility:hidden;transform:translateX(36px);transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s linear .6s}
+.slide.past{transform:translateX(-36px)}
+.slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1),visibility 0s}
+
+/* ambient decoration */
+.drum{position:absolute;width:min(80vh,62vw);aspect-ratio:1;right:-12vh;top:50%;translate:0 -50%;color:var(--red);opacity:.055;pointer-events:none;animation:spin 300s linear infinite}
+.skyline{position:absolute;left:0;right:0;bottom:var(--footer);height:15vh;width:100%;color:var(--red);opacity:.07;pointer-events:none}
+@keyframes spin{to{rotate:360deg}}
+
+.inner{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:calc(env(safe-area-inset-top,0px) + 16px) clamp(16px,4.5vw,80px) calc(var(--footer) + env(safe-area-inset-bottom,0px) + var(--s3));display:flex;flex-direction:column}
+.content{margin-block:auto;width:100%;max-width:1640px;margin-inline:auto;display:flex;flex-direction:column;gap:var(--s3);position:relative;z-index:1}
+
+/* section bar */
+.hbar{display:flex;align-items:center;gap:var(--s1);background:var(--red);color:var(--cream);padding:.45em 1em;flex:none;margin-bottom:var(--s2);position:relative;z-index:2}
+.hbar svg{width:1.25em;height:1.25em;flex:none;fill:var(--star)}
+.hbar span{font-family:var(--f-display);font-weight:800;font-size:var(--t-sm);letter-spacing:.08em;text-transform:uppercase}
+
+h1,h2,h3{margin:0;text-wrap:balance}
+h2.title{font-family:var(--f-display);font-weight:800;text-transform:uppercase;color:var(--red);font-size:var(--t-h2);line-height:1.22;letter-spacing:.005em}
+h3{font-family:var(--f-display);font-weight:800;color:var(--red);text-transform:uppercase;font-size:var(--t-h3);letter-spacing:.04em;line-height:1.35;margin-bottom:var(--s1)}
+.lead{font-weight:700;color:var(--ink)}
+.dash li{position:relative;padding-left:1.1em;margin-top:.35em}
+.dash li::before{content:"";position:absolute;left:0;top:.72em;width:.55em;height:2px;background:var(--red)}
+.mark{color:var(--red);font-weight:700;background:linear-gradient(transparent 64%,var(--star) 64%,var(--star) 92%,transparent 92%);padding:0 .08em}
+
+/* icons: one stroke system */
+.ic{width:var(--icon);height:var(--icon);flex:none;fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* photos */
+.photo{position:relative;isolation:isolate}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;border:1px solid var(--red-25);border-radius:var(--r);background:var(--cream)}
+.photo figcaption{font-size:var(--t-xs);color:var(--ink-70);margin-top:.35em;font-style:italic;line-height:1.35}
+.photo.offset::before{content:"";position:absolute;inset:12px -12px 12px 12px;background:var(--red);z-index:-1}
+.photo.offset figcaption{position:absolute;left:0;bottom:-1.8em}
+
+/* reveal: one gentle fade-up, staggered by group */
+.rv{opacity:0}
+.slide.active .rv{animation:fadeup .55s ease both;animation-delay:calc(var(--i,0) * .12s + .2s)}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* footer */
+.footer{position:fixed;left:0;right:0;bottom:0;z-index:20;height:calc(var(--footer) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);background:var(--red);color:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:12px;padding-inline:clamp(12px,3vw,48px)}
+.footer .dept{font-size:12px;letter-spacing:.16em;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{position:absolute;left:0;top:-3px;height:3px;background:var(--star);width:0;transition:width .45s ease}
+.ctrls{display:flex;align-items:center;gap:6px;flex:none}
+.ctrls button{appearance:none;border:1px solid var(--cream-30);background:transparent;color:var(--cream);height:34px;min-width:34px;padding:0 10px;font:600 13px var(--f-body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.ctrls button:hover{border-color:var(--cream)}
+.ctrls button:focus-visible{outline:2px solid var(--star);outline-offset:2px}
+.ctrls button[aria-pressed="true"]{background:var(--star);color:var(--ink);border-color:var(--star)}
+.counter{font:700 14px var(--f-body);font-variant-numeric:tabular-nums;min-width:58px;text-align:center}
+
+/* speaker notes */
+.notes-panel{position:fixed;left:0;right:0;bottom:calc(var(--footer) + env(safe-area-inset-bottom,0px));z-index:19;background:var(--ink);color:var(--cream);padding:16px clamp(16px,4.5vw,80px) 18px;transform:translateY(105%);transition:transform .35s ease;max-height:42vh;overflow-y:auto;border-top:3px solid var(--star)}
+.notes-panel.open{transform:none}
+.notes-panel .lbl{font:800 12px var(--f-display);letter-spacing:.16em;color:var(--star);margin-bottom:6px;text-transform:uppercase}
+.notes-panel .txt{font-family:var(--f-quote);font-style:italic;font-size:clamp(15px,1.05em,21px);line-height:1.65;max-width:110ch}
+aside.notes{display:none}
+
+/* silk + corner flag (cover, closing) */
+.silk{position:absolute;left:0;bottom:calc(var(--footer) - 2px);width:100%;height:22vh;pointer-events:none}
+.silk path{animation:drift linear infinite;fill:var(--red)}
+.silk .w1{animation-duration:30s;opacity:.35}
+.silk .w2{animation-duration:22s;opacity:.6}
+.silk .w3{animation-duration:16s;opacity:1}
+@keyframes drift{to{transform:translateX(-800px)}}
+.cornerflag{position:absolute;left:0;top:0;width:clamp(130px,19vw,300px);pointer-events:none}
+.cornerflag .f1{fill:var(--red)} .cornerflag .f2{fill:var(--red);opacity:.55}
+.twinkle{animation:twinkle 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.75;transform:scale(1.07)}}
+
+/* ===== image system: one tone (baked red–cream duotone), one 6px radius, hairline frame.
+   Order on every slide: title (instant) → image (fade/slow zoom) → detail content. ===== */
+.pic,.late{opacity:0}
+.slide.active .pic{animation:fade .8s ease .1s both}
+.slide.active .late{animation:fade .8s ease 1.9s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.slide.active.has-pic .rv{animation-delay:calc(var(--i,0) * .12s + .7s)}
+.sideimg,.colimg,.smallimg,.strip{overflow:hidden;margin:0}
+.sideimg img,.colimg img,.smallimg img,.strip img{display:block;width:100%;height:100%;object-fit:cover}
+.slide.active .sideimg img,.slide.active .colimg img,.slide.active .smallimg img,.slide.active .strip img,.slide.active .bgimg{animation:kb 14s ease-out both}
+@keyframes kb{from{transform:scale(1.07)}to{transform:none}}
+.bgimg{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);max-width:none;object-fit:cover;filter:blur(3px);pointer-events:none}
+.veil{position:absolute;inset:0;pointer-events:none}
+.cover .veil{background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 40%,rgba(251,244,226,.78) 66%,rgba(251,244,226,.5) 100%)}
+.end .veil{background:rgba(251,244,226,.86)}
+.s2 .veil{background:rgba(158,15,15,.82)}
+.sideimg{position:absolute;top:0;bottom:var(--footer);width:40%;z-index:0}
+.img-right .sideimg{right:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);mask-image:linear-gradient(90deg,transparent 0,#000 32%)}
+.img-left .sideimg{left:0;-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 32%);mask-image:linear-gradient(270deg,transparent 0,#000 32%)}
+.img-right .inner{padding-right:calc(38% + 1vw)}
+.img-left .inner{padding-left:calc(38% + 1vw)}
+.img-right .content,.img-left .content{max-width:none}
+.img-left .chain{grid-template-columns:1fr}
+.img-left .step{display:grid;grid-template-columns:minmax(0,12em) minmax(0,1fr);gap:var(--s3);padding:var(--s2) var(--s3);align-items:start}
+.img-left .step .top{border-bottom:0;border-right:2px solid var(--red-25);padding:0 var(--s2) 0 0;min-height:0;height:100%}
+.img-left .chev{height:1.5em}
+.img-left .chev svg{width:1.8em;height:1em}
+.colimg{height:clamp(110px,27vh,300px);border-radius:var(--r);border:1px solid var(--red-25);margin-bottom:var(--s2)}
+.titlerow{display:grid;grid-template-columns:minmax(0,1fr) clamp(200px,26vw,420px);gap:var(--s3);align-items:center}
+.smallimg{height:clamp(110px,22vh,240px);border-radius:var(--r);border:1px solid var(--red-25)}
+.dash li.thumbed{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:var(--s2);align-items:center;padding-left:0;margin-top:.6em}
+.dash li.thumbed::before{display:none}
+.thumb{width:3.2em;height:3.2em;border-radius:50%;object-fit:cover;border:1px solid var(--red-25)}
+.strip{height:clamp(80px,16vh,180px);border-radius:var(--r) var(--r) 0 0;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent);margin-bottom:calc(-1 * var(--s2))}
+.strip img{object-position:center 45%}
+.covstar{width:3.4em;height:3.4em;fill:var(--star);stroke:var(--red);stroke-width:3;display:block;margin-bottom:var(--s1)}
+
+/* ===== S1 cover ===== */
+.cover .content{display:block;padding-bottom:10vh}
+.cover .content > div{max-width:min(60%,920px)}
+.cover .meta{font-size:var(--t-xs);letter-spacing:.18em;font-weight:700;color:var(--ink-70);text-transform:uppercase}
+.cover h1{font-family:var(--f-display);font-weight:900;color:var(--red);text-transform:uppercase;font-size:var(--t-h1);line-height:1.18;margin:var(--s1) 0 var(--s2)}
+.cover .sub{font-family:var(--f-quote);font-style:italic;font-size:var(--t-lg);line-height:1.5;border-left:4px solid var(--star);padding-left:var(--s2);max-width:44ch}
+.cover .info{margin-top:var(--s3);display:inline-block;border-top:2px solid var(--red);padding-top:var(--s1);font-weight:600;font-size:var(--t-sm)}
+
+/* ===== S2 agenda (red) ===== */
+.slide.red{background:var(--red);color:var(--cream)}
+.slide.red .drum{color:var(--cream);opacity:.07;right:auto;left:50%;translate:-50% -50%;width:min(120vh,110vw)}
+.s2 .q{font-family:var(--f-quote);font-style:italic;font-size:clamp(1.2em,.9em + 1vw,1.9em);line-height:1.45;max-width:52ch}
+.s2 .kicker{font-family:var(--f-display);font-weight:800;color:var(--star);letter-spacing:.14em;text-transform:uppercase;font-size:var(--t-xs);margin-bottom:var(--s1)}
+.agenda{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s4);counter-reset:a}
+.panel{background:rgba(251,244,226,.94);color:var(--ink);border-radius:var(--r);padding:var(--s2) var(--s3) var(--s1)}
+.panel .kicker{color:var(--red)}
+.agenda li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:var(--s1);padding:var(--s1) 0;border-top:1px solid var(--red-25);align-items:baseline}
+.agenda .n{font-family:var(--f-display);font-weight:900;color:var(--red);font-size:1.6em;line-height:1}
+.agenda strong{color:var(--red)}
+
+/* ===== S3 origins ===== */
+.prereq{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--s3)}
+.prereq > div + div{border-left:2px solid var(--red-25);padding-left:var(--s3)}
+.mile-label{font-family:var(--f-display);font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.04em;font-size:var(--t-h3)}
+/* timeline: year stamps sit ON the line, photo under each year, caption under each photo */
+.timeline{--dot:1.9em;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);position:relative;padding-right:1.2em}
+.timeline::before{content:"";position:absolute;z-index:0;left:0;right:0;top:calc(var(--dot) / 2 - 2px);height:4px;background:var(--red);transform:scaleX(0);transform-origin:left center}
+.timeline::after{content:"";position:absolute;z-index:0;right:0;top:calc(var(--dot) / 2 - .6em);border-left:1.1em solid var(--red);border-top:.6em solid transparent;border-bottom:.6em solid transparent;opacity:0}
+.slide.active .timeline::before{animation:grow 1.6s .3s cubic-bezier(.4,0,.2,1) forwards}
+.slide.active .timeline::after{animation:show .2s 1.85s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+@keyframes show{to{opacity:1}}
+.tl{position:relative;z-index:1;display:flex;flex-direction:column;gap:var(--s1);min-width:0;opacity:0}
+.slide.active .tl{animation:fadeup .5s ease both;animation-delay:calc(var(--i) * .4s + .45s)}
+.tl .stamp{display:flex;align-items:center;gap:.4em;height:var(--dot)}
+.tl .stamp svg{width:var(--dot);height:var(--dot);fill:var(--star);stroke:var(--red);stroke-width:6;flex:none}
+.tl .yr{font-family:var(--f-display);font-weight:900;color:var(--red);font-size:1.6em;line-height:1;background:var(--cream);padding:0 .3em}
+.tl .photo img{height:clamp(110px,21vh,250px)}
+.tl .photo figcaption{font-style:normal;color:var(--ink);font-size:var(--t-md);margin-top:.5em;line-height:1.45}
+.tl .photo figcaption b{color:var(--red);display:block}
+
+/* ===== S4 definition ===== */
+.defn{display:block}
+.quote{margin:0;border-left:6px solid var(--red);padding:var(--s1) 0 var(--s1) var(--s3);font-family:var(--f-quote);font-style:italic;font-size:var(--t-lg);line-height:1.55}
+.quote .src{display:block;font-family:var(--f-display);font-style:normal;font-weight:800;color:var(--red);font-size:.62em;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--s1)}
+.portrait{aspect-ratio:283/383}
+.portrait figcaption{text-align:center}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.trio > div{padding:0 var(--s3);display:flex;flex-direction:column;gap:var(--s1)}
+.trio > div:first-child{padding-left:0}
+.trio > div + div{border-left:2px solid var(--red-25)}
+.trio .lead{color:var(--red)}
+
+/* ===== S5 politics ===== */
+.ledger > li{display:grid;grid-template-columns:var(--icon) minmax(0,1fr);gap:var(--s3);padding:var(--s2) 0;border-top:1px solid var(--red-25);align-items:start}
+.ledger > li:last-child{border-bottom:1px solid var(--red-25)}
+.ledger .lead{color:var(--red)}
+
+/* ===== S6 economy: a chain of three steps ===== */
+.chain{display:grid;grid-template-columns:minmax(0,1fr) 2.4em minmax(0,1fr) 2.4em minmax(0,1fr);align-items:stretch}
+.step{display:flex;flex-direction:column;gap:var(--s2);border:2px solid var(--red);padding:var(--s3)}
+.step .top{display:flex;flex-direction:column;gap:var(--s1);padding-bottom:var(--s2);border-bottom:2px solid var(--red-25);min-height:7.6em}
+.step .top h3{margin:0}
+.chev{display:flex;align-items:center;justify-content:center}
+.chev svg{width:1.4em;height:2.6em;fill:none;stroke:var(--red);stroke-width:3}
+
+/* ===== S7 culture/society ===== */
+.halves{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);position:relative}
+.halves::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--red-25)}
+.half header{display:flex;align-items:center;gap:var(--s2);border-bottom:3px solid var(--red);padding-bottom:var(--s1);margin-bottom:var(--s1)}
+.half header h3{margin:0;font-size:var(--t-lg)}
+.stars li{display:grid;grid-template-columns:1em minmax(0,1fr);gap:.7em;padding:.55em 0}
+.stars li svg{width:.9em;height:.9em;fill:var(--red);margin-top:.35em}
+
+/* ===== S8 dialectic diagram ===== */
+.link{display:grid;grid-template-columns:minmax(0,1fr) clamp(70px,9vw,140px) minmax(0,1fr);align-items:stretch}
+.node{border:2px solid var(--red);background:var(--cream);min-width:0}
+.node .nh{background:var(--red);color:var(--cream);padding:.6em 1em}
+.node .nh b{display:block;font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:var(--t-lg)}
+.node .nh small{display:block;font-size:var(--t-sm)}
+.node ul{padding:var(--s1) var(--s2) var(--s2)}
+.arrows{display:flex;align-items:center;justify-content:center}
+.arrows svg{width:100%;height:auto;max-height:150px}
+.arrows .a{stroke-dasharray:7 7;animation:flow 1.4s linear infinite}
+.arrows .b{animation-direction:reverse}
+@keyframes flow{to{stroke-dashoffset:-28}}
+
+/* ===== S9 table ===== */
+.tablewrap{overflow-x:auto;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:max(15px,.95em);line-height:1.4}
+th,td{padding:.5em .8em;text-align:left;vertical-align:top;border-bottom:1px solid var(--red-25)}
+thead th{background:var(--red);color:var(--cream);font-family:var(--f-display);font-weight:800;font-size:.92em;letter-spacing:.02em}
+thead th.hl{background:var(--ink);color:var(--star)}
+tbody th{width:19%;font-weight:700}
+td.hl{background:var(--red-06);border-left:3px solid var(--red)}
+tbody tr{opacity:0}
+.slide.active tbody tr{animation:fadeup .45s ease both;animation-delay:calc(var(--i) * .14s + .3s)}
+
+/* ===== S10 function tree ===== */
+/* every branch is a framed box; each draws its own drop line and its own share of the bar, so the tree is one unbroken line */
+.tree{--g:var(--s3);--drop:1.6em;--lw:3px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr) minmax(0,1.55fr);gap:var(--g);position:relative;padding-top:calc(var(--drop) * 2 + 2.8em)}
+.branch{--bw:2px;position:relative;display:flex;flex-direction:column;gap:var(--s1);border:var(--bw) solid var(--red);padding:var(--s2) var(--s3)}
+.branch.core{--bw:4px}
+.branch::before{content:"";position:absolute;left:calc(50% - var(--lw) / 2);top:calc(-1 * var(--drop) - var(--bw));height:var(--drop);width:var(--lw);background:var(--red)}
+.branch::after{content:"";position:absolute;top:calc(-1 * var(--drop) - var(--bw) - var(--lw) / 2);height:var(--lw);left:calc(-1 * var(--g) / 2 - var(--bw));right:calc(-1 * var(--g) / 2 - var(--bw));background:var(--red)}
+.branch:first-child::after{left:calc(50% - var(--lw) / 2)}
+.branch:last-child::after{right:calc(50% - var(--lw) / 2)}
+.tree .root{position:absolute;left:calc(50% - 1.2em);top:calc(-2 * var(--drop) - var(--bw) - 2.4em);width:2.4em;height:2.4em;fill:var(--star);stroke:var(--red);stroke-width:6}
+.tree .stem{position:absolute;left:calc(50% - var(--lw) / 2);top:calc(-2 * var(--drop) - var(--bw));height:var(--drop);width:var(--lw);background:var(--red)}
+.tag{align-self:flex-start;background:var(--star);color:var(--ink);font:800 var(--t-xs) var(--f-display);letter-spacing:.08em;padding:.2em .6em;text-transform:uppercase}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2);margin-top:var(--s1)}
+.vs > div{padding-top:var(--s1);border-top:4px solid var(--ink)}
+.vs > div.build{border-top-color:var(--red)}
+.vs .lead{display:block;margin-bottom:.2em}
+.vs .build .lead{color:var(--red)}
+
+/* ===== S11 repression vs construction ===== */
+.balance{display:grid;grid-template-columns:clamp(96px,9vw,150px) minmax(0,1fr) minmax(0,1.3fr);gap:var(--s3);align-items:start}
+.side{display:flex;flex-direction:column;gap:var(--s1)}
+.side.weak{color:var(--ink-70)}
+.side.weak h3{color:var(--ink)}
+.side.strong{border:2px solid var(--red);padding:var(--s2) var(--s3)}
+.lq{font-family:var(--f-quote);font-style:italic;border-left:4px solid currentColor;padding:.2em 0 .2em var(--s2);line-height:1.55}
+.side.strong .lq{border-left-color:var(--red);color:var(--ink)}
+.lq b{font-family:var(--f-body);font-style:normal;font-weight:700}
+.center{display:flex;flex-direction:column;align-items:center;gap:var(--s1)}
+.center .portrait{width:100%}
+.bars{display:grid;gap:.5em;font-size:var(--t-sm);font-weight:700}
+.bar{display:grid;grid-template-columns:13em minmax(0,1fr);align-items:center;gap:var(--s2)}
+.track{height:14px;background:var(--red-12);position:relative;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;width:0}
+.fill.f1{background:var(--ink)}
+.fill.f2{background:var(--red)}
+.slide.active .fill.f1{animation:w1 1s .5s ease forwards}
+.slide.active .fill.f2{animation:w2 1.4s .8s ease forwards}
+@keyframes w1{to{width:32%}} @keyframes w2{to{width:100%}}
+
+/* ===== S12 rule-of-law ===== */
+.law{display:grid;grid-template-columns:clamp(140px,19vw,280px) minmax(0,1fr);gap:var(--s4);align-items:start}
+.law .photo{aspect-ratio:3/5;max-height:58vh}
+.law .photo img{object-position:center 40%}
+.six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--s3)}
+.six li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:var(--s2);padding:var(--s1) 0 .7em;border-top:1px solid var(--red-25)}
+.six .num{width:2.2em;height:2.4em;display:grid;place-items:center;background:var(--red);color:var(--star);font:900 1em var(--f-display);clip-path:polygon(50% 0,100% 24%,100% 76%,50% 100%,0 76%,0 24%)}
+.six p{font-size:var(--t-sm)}
+.six .lead{color:var(--red);display:block}
+.source{font-size:var(--t-xs);color:var(--ink-70);font-style:italic;border-top:2px solid var(--red);padding-top:var(--s1);margin-top:var(--s1)}
+
+/* ===== S13 closing ===== */
+.concl-wrap{max-width:1400px}
+.concl > li{display:grid;grid-template-columns:2.6em minmax(0,14em) minmax(0,1fr);gap:var(--s3);padding:var(--s3) 0;border-top:2px solid var(--red-25);align-items:baseline}
+.concl > li:last-child{border-bottom:2px solid var(--red-25)}
+.concl .n{font-family:var(--f-display);font-weight:900;color:var(--red);font-size:2.2em;line-height:1}
+.concl .lead{color:var(--red);font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:var(--t-lg);line-height:1.3}
+.concl p:last-child{font-size:var(--t-lg);line-height:1.5}
+.end .content{padding-bottom:16vh;align-items:center;text-align:center;max-width:1200px}
+.end .bigstar{width:clamp(70px,9vh,110px);height:clamp(70px,9vh,110px);fill:var(--star);stroke:var(--red);stroke-width:3}
+.end .qa{font-family:var(--f-display);font-weight:800;color:var(--red);letter-spacing:.14em;text-transform:uppercase;font-size:var(--t-md);border-top:2px solid var(--red);border-bottom:2px solid var(--red);padding:.3em 1.2em}
+.thanks{font-family:var(--f-display);font-weight:900;color:var(--red);text-transform:uppercase;font-size:clamp(1.8em,1.1em + 2.4vw,3.4em);line-height:1.22;text-wrap:balance;max-width:20ch}
+.invite{font-family:var(--f-quote);font-style:italic;font-size:clamp(1.3em,1em + .8vw,1.9em);max-width:36ch}
+
+/* ===== S14 mind map: hub in the middle, branches 1–3 left, 4–6 right; connectors drawn in SVG from measured boxes ===== */
+.mmwrap{max-width:1680px;gap:var(--s1)}
+.mm-eyebrow{font-family:var(--f-display);font-weight:800;color:var(--red);letter-spacing:.16em;text-transform:uppercase;font-size:var(--t-sm);text-align:center}
+.mm{position:relative;display:grid;grid-template-columns:minmax(0,1fr) clamp(170px,16vw,290px) minmax(0,1.08fr);column-gap:clamp(40px,4.5vw,90px);align-items:center;font-size:.86em;line-height:1.42}
+.mm-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:2}
+.mm-lines path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.mm-lines path.f{stroke-width:3.5}
+.slide.active .mm-lines path{animation:draw .7s ease forwards;animation-delay:calc(var(--k) * .12s + .5s)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.mm-lines circle{fill:var(--star);stroke:var(--red);stroke-width:2}
+.mm-col{display:flex;flex-direction:column;gap:var(--s2);position:relative;z-index:1;min-width:0}
+.br{background:var(--cream);border:1px solid var(--red-25);border-radius:var(--r);padding:.6em .9em .7em;opacity:0}
+.br.focus{border:2px solid var(--red)}
+.slide.active .br{animation:fade .6s ease both;animation-delay:calc(var(--k) * .12s + .75s)}
+.bh{display:flex;align-items:center;gap:.55em;margin-bottom:.35em}
+.bh h3{margin:0;font-size:1.05em}
+.bn{width:1.7em;height:1.7em;flex:none;display:grid;place-items:center;background:var(--red);color:var(--star);font:900 .9em var(--f-display);border-radius:50%}
+.bh .tag{margin-left:auto;align-self:center}
+.br .dash li{margin-top:.2em}
+.br b{color:var(--red)}
+.cmp{display:grid;grid-template-columns:auto minmax(0,.8fr) 1.2em minmax(0,1fr);column-gap:.6em;row-gap:.28em;align-items:baseline}
+.cmp .ch{font:800 .78em var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-70);padding-bottom:.2em;border-bottom:1px solid var(--red-25)}
+.cmp .ch.xh{color:var(--red)}
+.cmp .ck{font-weight:700}
+.cmp .ar{color:var(--red);text-align:center}
+.cmp .xh{color:var(--red);font-weight:700}
+.mm-hub{position:relative;z-index:1;display:flex;justify-content:center}
+.hub{background:var(--red);color:var(--cream);border-radius:var(--r);padding:1.6em 1em 1.1em;text-align:center;position:relative;width:100%}
+.hubstar{position:absolute;left:50%;top:0;width:2.4em;height:2.4em;translate:-50% -55%;fill:var(--star);stroke:var(--red);stroke-width:4}
+.hub-t{font-family:var(--f-display);font-weight:900;font-size:1.22em;line-height:1.28;text-wrap:balance}
+.hub-s{font-size:.78em;margin-top:.7em;padding-top:.6em;border-top:1px solid var(--cream-30)}
+.slide.active .hub{animation:fade .5s ease .15s both}
+
+/* ===== responsive ===== */
+@media (max-width:960px){
+  :root{--footer:48px;--icon:2.2em}
+  .cover .content{grid-template-columns:1fr;gap:var(--s3);padding-bottom:18vh}
+  .cover .photo{justify-self:stretch;max-height:none;width:calc(100% - 12px)}
+  .cover .photo .corner{right:-6px;top:-22px;width:44px;height:44px}
+  .agenda{grid-template-columns:1fr}
+  .prereq,.defn,.halves,.law,.balance{grid-template-columns:1fr}
+  .prereq > div + div{border-left:0;padding-left:0;border-top:2px solid var(--red-25);padding-top:var(--s2)}
+  .halves::after{display:none}
+  .defn .portrait{max-width:170px}
+  .trio{grid-template-columns:1fr;gap:var(--s2)}
+  .trio > div{padding:0}
+  .trio > div + div{border-left:0;border-top:2px solid var(--red-25);padding-top:var(--s2)}
+  .chain{grid-template-columns:1fr}
+  .chev{height:2em}
+  .chev svg{rotate:90deg}
+  .link{grid-template-columns:1fr}
+  .arrows{height:70px}
+  .arrows svg{width:auto;height:100%;rotate:90deg}
+  .tree{grid-template-columns:1fr}
+  .tree{padding-top:0}
+  .branch::before,.branch::after,.tree .root,.tree .stem{display:none}
+  .center{flex-direction:row;align-items:center}
+  .center .portrait{width:110px}
+  .law .photo{max-width:180px;aspect-ratio:3/4}
+  .timeline{grid-template-columns:1fr 1fr;row-gap:var(--s3);padding-right:0}
+  .timeline::before,.timeline::after{display:none}
+  .drum{width:90vw;right:-30vw}
+}
+@media (max-width:960px){
+  .cover .content > div{max-width:none}
+  .cover .veil{background:rgba(251,244,226,.88)}
+  .sideimg{position:static;width:100%;height:28vh;order:2;margin-top:var(--s3);border-radius:var(--r);-webkit-mask-image:none!important;mask-image:none!important;flex:none}
+  .img-right .inner,.img-left .inner{padding-inline:clamp(16px,4.5vw,80px)}
+  .img-left .step{grid-template-columns:1fr}
+  .img-left .step .top{border-right:0;border-bottom:2px solid var(--red-25);padding:0 0 var(--s1)}
+  .titlerow{grid-template-columns:1fr}
+  .smallimg{height:24vh}
+  .strip{display:none}
+  .six{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .balance .portrait{max-width:120px}
+}
+@media (max-width:960px){
+  .mm{grid-template-columns:1fr;row-gap:var(--s2)}
+  .mm-hub{order:-1}
+  .mm-lines{display:none}
+  .mm-col{padding-left:1.2em;border-left:3px solid var(--red)}
+}
+@media (max-width:600px){
+  .timeline{grid-template-columns:1fr}
+  .six{grid-template-columns:1fr}
+  .vs{grid-template-columns:1fr}
+  .bar{grid-template-columns:1fr;gap:.2em}
+  .concl > li{grid-template-columns:2em minmax(0,1fr);gap:var(--s1) var(--s2)}
+  .concl > li p:last-child{grid-column:2}
+  .ctrls .hide-s,.footer .dept{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+
+<!-- shared SVG symbols: drum, skyline, star, and one consistent line-icon set -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="drum" viewBox="-500 -500 1000 1000"><g id="drumG" fill="none" stroke="currentColor" stroke-width="3"></g></symbol>
+    <symbol id="sky" viewBox="0 0 1600 220" preserveAspectRatio="xMidYMax slice"><g id="skyG" fill="currentColor"></g></symbol>
+    <symbol id="star" viewBox="0 0 100 100"><polygon points="50,4 61.2,38.2 97,38.2 68,59.4 79,93.6 50,72.6 21,93.6 32,59.4 3,38.2 38.8,38.2"/></symbol>
+
+    <!-- S4: many over few -->
+    <symbol id="i-many" viewBox="0 0 48 48"><circle cx="10" cy="15" r="3.5"/><circle cx="20" cy="15" r="3.5"/><circle cx="15" cy="25" r="3.5"/><path d="M4 39c0-5 3-8 6-8s6 3 6 8M14 39c0-5 3-8 6-8s6 3 6 8"/><path d="M30 24h6"/><circle cx="42" cy="22" r="2.5"/><path d="M39 33c0-3 1.5-5 3-5s3 2 3 5"/></symbol>
+    <!-- S4: administer + manage -->
+    <symbol id="i-gear" viewBox="0 0 48 48"><circle cx="24" cy="24" r="6"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/><circle cx="24" cy="24" r="13"/></symbol>
+    <!-- S4: withering away -->
+    <symbol id="i-dusk" viewBox="0 0 48 48"><path d="M4 32h40M10 32a14 14 0 0 1 28 0"/><path d="M24 8v6M12 13l3 3M36 13l-3 3"/><path d="M18 40l6 4 6-4"/></symbol>
+    <!-- S5: worker (hammer) -->
+    <symbol id="i-hammer" viewBox="0 0 48 48"><path d="M20 8l12 12M14 14l8-8 6 2 8 8-4 4-6-2-6 6"/><path d="M22 22L8 40l2 2 18-14"/></symbol>
+    <!-- S5: majority -->
+    <symbol id="i-crowd" viewBox="0 0 48 48"><circle cx="12" cy="16" r="4"/><circle cx="24" cy="12" r="4"/><circle cx="36" cy="16" r="4"/><path d="M5 34c0-6 3-10 7-10M43 34c0-6-3-10-7-10M15 38c0-8 4-14 9-14s9 6 9 14"/></symbol>
+    <!-- S5: ballot -->
+    <symbol id="i-ballot" viewBox="0 0 48 48"><path d="M8 24h32v18H8z"/><path d="M16 24V6h16v18"/><path d="M20 15l3 3 6-6"/><path d="M8 30h32"/></symbol>
+    <!-- S6 -->
+    <symbol id="i-base" viewBox="0 0 48 48"><path d="M6 42h36M10 42V22M20 42V22M28 42V22M38 42V22M6 22L24 8l18 14z"/></symbol>
+    <symbol id="i-chain" viewBox="0 0 48 48"><path d="M20 28l-6 6a5 5 0 0 1-7-7l6-6M28 20l6-6a5 5 0 0 1 7 7l-6 6"/><path d="M22 16l-2-6M26 32l2 6M16 22l-6-2M32 26l6 2"/></symbol>
+    <symbol id="i-rise" viewBox="0 0 48 48"><path d="M6 42V26l10 6V26l10 6V18h8v24z"/><path d="M28 14l8-8 8 8M36 6v10"/></symbol>
+    <!-- S7 -->
+    <symbol id="i-book" viewBox="0 0 48 48"><path d="M6 10h13a5 5 0 0 1 5 5v25a4 4 0 0 0-4-4H6zM42 10H29a5 5 0 0 0-5 5v25a4 4 0 0 1 4-4h14z"/></symbol>
+    <symbol id="i-equal" viewBox="0 0 48 48"><circle cx="14" cy="12" r="4"/><circle cx="34" cy="12" r="4"/><path d="M6 32c0-6 3-10 8-10s8 4 8 10M26 32c0-6 3-10 8-10s8 4 8 10"/><path d="M16 38h16M16 43h16"/></symbol>
+    <!-- S10 -->
+    <symbol id="i-scope" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="7"/><path d="M24 2v10M24 36v10"/></symbol>
+    <symbol id="i-fields" viewBox="0 0 48 48"><path d="M6 6h15v15H6zM27 6h15v15H27zM6 27h15v15H6zM27 27h15v15H27z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 48 48"><path d="M24 6v36M14 42h20M8 12h32"/><path d="M8 12l-5 12h10zM40 12l-5 12h10z"/></symbol>
+  </defs>
+</svg>
+
+<main class="deck" id="deck">
+
+<!-- ============ SLIDE 1 ============ -->
+<section class="slide cover">
+  <img class="bgimg" src="img2/s01-quoc-hoi.jpg" alt="" aria-hidden="true">
+  <div class="veil"></div>
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <svg class="cornerflag" viewBox="0 0 340 220" aria-hidden="true">
+    <path class="f2" d="M0 0H300Q330 40 300 80Q260 140 200 120Q120 100 60 150Q20 180 0 220Z"/>
+    <path class="f1" d="M0 0H220Q240 40 200 70Q150 110 90 95Q40 85 0 120Z"/>
+  </svg>
+  <svg class="silk" viewBox="0 0 1600 260" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="inner"><div class="content">
+    <div>
+      <svg class="covstar rv" viewBox="0 0 100 100" aria-hidden="true"><use class="twinkle" href="#star"/></svg>
+      <div class="meta rv">Trường Đại học Quốc tế, ĐHQG-HCM</div>
+      <h1 class="rv">BẢN CHẤT VÀ CHỨC NĂNG CỦA NHÀ NƯỚC XÃ HỘI CHỦ NGHĨA</h1>
+      <p class="sub rv">Vì sao Nhà nước XHCN là kiểu nhà nước mới, khác về chất so với các kiểu nhà nước bóc lột trong lịch sử?</p>
+      <div class="info rv">Môn học: Chủ nghĩa xã hội khoa học – Nhóm thực hiện: Nhóm 4.</div>
+    </div>
+  </div></div>
+  <aside class="notes"></aside>
+</section>
+
+<!-- ============ SLIDE 2 ============ -->
+<section class="slide red s2">
+  <img class="bgimg" src="img2/s02-hoi-truong.jpg" alt="" aria-hidden="true">
+  <div class="veil"></div>
+  <svg class="drum"><use href="#drum"/></svg>
+  <div class="inner"><div class="content">
+    <div class="rv">
+      <div class="kicker">Câu hỏi mở đầu</div>
+      <p class="q">"Mọi nhà nước trong lịch sử đều mang tính giai cấp và dùng bạo lực trấn áp, vậy Nhà nước XHCN 'mới' và 'khác biệt về chất' ở điểm nào?"</p>
+    </div>
+    <div class="panel rv">
+      <div class="kicker">Cấu trúc bài thuyết trình:</div>
+      <ol class="agenda">
+        <li><span class="n">1</span><p><strong>Nguồn gốc &amp; Khái niệm:</strong> Tiền đề ra đời và thuộc tính "nửa nhà nước".</p></li>
+        <li><span class="n">2</span><p><strong>Bản chất toàn diện:</strong> Chính trị – Kinh tế – Văn hóa, tư tưởng &amp; xã hội.</p></li>
+        <li><span class="n">3</span><p><strong>Mắt xích bản chất:</strong> Mối quan hệ giữa Dân chủ XHCN và Nhà nước XHCN.</p></li>
+        <li><span class="n">4</span><p><strong>Đối chiếu lịch sử:</strong> Bảng so sánh 7 tiêu chí với các nhà nước bóc lột.</p></li>
+        <li><span class="n">5</span><p><strong>Hệ thống chức năng:</strong> Quan hệ biện chứng giữa trấn áp và tổ chức – xây dựng.</p></li>
+        <li><span class="n">6</span><p><strong>Vận dụng thực tiễn:</strong> 6 đặc trưng của Nhà nước pháp quyền XHCN Việt Nam.</p></li>
+      </ol>
+    </div>
+  </div></div>
+  <aside class="notes">"Kính thưa thầy cô và các bạn, để trả lời câu hỏi cốt lõi của đề tài, nhóm chúng tôi triển khai qua 6 phần logic: từ cơ sở kinh tế - xã hội dẫn đến sự ra đời tất yếu, phân tích 3 phương diện bản chất, đối chiếu với các nhà nước áp bức trong lịch sử, làm rõ quy luật chức năng và liên hệ trực tiếp với thực tiễn xây dựng Nhà nước pháp quyền tại Việt Nam."</aside>
+</section>
+
+<!-- ============ SLIDE 3 ============ -->
+<section class="slide" data-part="PHẦN 1: NGUỒN GỐC &amp; KHÁI NIỆM">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <h2 class="title">Tiền đề khách quan &amp; Sự ra đời của Nhà nước XHCN</h2>
+    <div class="prereq rv">
+      <div>
+        <h3>Tiền đề kinh tế – xã hội:</h3>
+        <ul class="dash">
+          <li>Mâu thuẫn gay gắt giữa <strong>lực lượng sản xuất mang tính xã hội hóa cao</strong> với <strong>quan hệ sản xuất dựa trên chế độ chiếm hữu tư nhân TBCN về tư liệu sản xuất</strong>.</li>
+          <li>Giai cấp công nhân phát triển và giác ngộ cách mạng dưới sự lãnh đạo của Đảng Cộng sản.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Phương thức xác lập:</h3>
+        <p>Đập tan bộ máy nhà nước tư sản qua cách mạng vô sản, xác lập chính quyền của giai cấp công nhân và nhân dân lao động.</p>
+      </div>
+    </div>
+    <div class="mile-label rv">Các mốc lịch sử tiêu biểu:</div>
+    <ol class="timeline">
+      <li class="tl">
+        <div class="stamp"><svg viewBox="0 0 100 100"><use href="#star"/></svg><span class="yr">1871</span></div>
+        <figure class="photo old"><img src="img2/s03-1871.jpg" alt="Chiến lũy Công xã Paris năm 1871">
+          <figcaption><b>(Công xã Paris):</b> Hình thức phôi thai, mầm mống đầu tiên của nhà nước kiểu mới.</figcaption></figure>
+      </li>
+      <li class="tl">
+        <div class="stamp"><svg viewBox="0 0 100 100"><use href="#star"/></svg><span class="yr">1917</span></div>
+        <figure class="photo old"><img src="img2/s03-1917.jpg" alt="Quần chúng trước Cung điện Mùa Đông, Cách mạng Tháng Mười Nga 1917">
+          <figcaption><b>(Cách mạng Tháng Mười Nga):</b> Nhà nước Xô viết – Nhà nước XHCN đầu tiên trên thế giới.</figcaption></figure>
+      </li>
+      <li class="tl">
+        <div class="stamp"><svg viewBox="0 0 100 100"><use href="#star"/></svg><span class="yr">1945</span></div>
+        <figure class="photo old"><img src="img2/s03-1945.jpg" alt="Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập năm 1945">
+          <figcaption><b>(Việt Nam):</b> Nhà nước Việt Nam Dân chủ Cộng hòa,</figcaption></figure>
+      </li>
+      <li class="tl">
+        <div class="stamp"><svg viewBox="0 0 100 100"><use href="#star"/></svg><span class="yr">1976</span></div>
+        <figure class="photo old"><img src="img2/s03-1976.jpg" alt="Kỳ họp thứ nhất Quốc hội khóa VI năm 1976">
+          <figcaption><b>(Việt Nam):</b> nay là Cộng hòa Xã hội Chủ nghĩa Việt Nam.</figcaption></figure>
+      </li>
+    </ol>
+  </div></div>
+  <aside class="notes">"Nhà nước XHCN không ra đời theo ý muốn chủ quan mà xuất phát từ mâu thuẫn khách quan của phương thức sản xuất tư bản chủ nghĩa. Khi lực lượng sản xuất đã bị xã hội hóa sâu sắc, chế độ tư hữu trở thành xiềng xích kìm hãm, đòi hỏi giai cấp công nhân phải đứng lên giành chính quyền và thiết lập công cụ nhà nước mới để giải phóng sức sản xuất."</aside>
+</section>
+
+<!-- ============ SLIDE 4 ============ -->
+<section class="slide" data-part="PHẦN 1: NGUỒN GỐC &amp; KHÁI NIỆM">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <h2 class="title">Định nghĩa &amp; Thuộc tính đặc biệt: "Nửa nhà nước"</h2>
+    <div class="defn">
+      <blockquote class="quote rv"><span class="src">Định nghĩa chuẩn (Giáo trình):</span>"Nhà nước XHCN là nhà nước mà ở đó, sự thống trị chính trị thuộc về giai cấp công nhân, do cách mạng XHCN sản sinh ra và có sứ mệnh xây dựng thành công CNXH, đưa nhân dân lao động lên địa vị làm chủ trên tất cả các mặt của đời sống xã hội trong một xã hội phát triển cao – xã hội XHCN".</blockquote>
+    </div>
+    <h3 class="rv">Vì sao V.I. Lênin gọi là "Nhà nước không còn nguyên nghĩa" / "Nửa nhà nước"?</h3>
+    <div class="trio">
+      <div class="rv"><svg class="ic"><use href="#i-many"/></svg><p><span class="lead">Về đối tượng thống trị:</span> Không còn là công cụ của <em>thiểu số</em> áp bức <em>đa số</em>, mà là sự chuyên chính của <em>tuyệt đại đa số nhân dân</em> đối với <em>thiểu số bóc lột</em>.</p></div>
+      <div class="rv"><svg class="ic"><use href="#i-gear"/></svg><p><span class="lead">Về cơ chế vận hành:</span> Vừa là bộ máy hành chính – cưỡng chế, vừa là tổ chức quản lý kinh tế – xã hội của chính nhân dân lao động.</p></div>
+      <div class="rv"><svg class="ic"><use href="#i-dusk"/></svg><p><span class="lead">Về quy luật phát triển:</span> Sứ mệnh của nó là tự tiêu vong khi cơ sở giai cấp không còn trong giai đoạn cộng sản chủ nghĩa hoàn thiện.</p></div>
+    </div>
+  </div></div>
+  <aside class="notes">"Điểm đột phá đầu tiên về lý luận chính là thuật ngữ 'nửa nhà nước' của Lênin. Nhà nước cũ sinh ra để duy trì bóc lột và vĩnh viễn hóa địa vị thống trị; ngược lại, Nhà nước XHCN sinh ra với sứ mệnh chăm lo lợi ích nhân dân, tiến tới xóa bỏ giai cấp và tự tiêu vong."</aside>
+</section>
+
+<!-- ============ SLIDE 5 ============ -->
+<section class="slide img-right has-pic" data-part="PHẦN 2: BẢN CHẤT TOÀN DIỆN">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner">
+  <figure class="sideimg pic"><img src="img2/s05-bau-cu.jpg" alt="Tranh cổ động: cử tri các tầng lớp bỏ phiếu bầu cử"></figure>
+  <div class="content">
+    <h2 class="title">Bản chất chính trị của Nhà nước XHCN</h2>
+    <ul class="ledger">
+      <li class="rv"><svg class="ic"><use href="#i-hammer"/></svg><p><span class="lead">Mang bản chất giai cấp công nhân:</span> Lợi ích của giai cấp công nhân thống nhất với lợi ích chung của toàn thể nhân dân lao động.</p></li>
+      <li class="rv"><svg class="ic"><use href="#i-crowd"/></svg>
+        <div><span class="lead">Sự thống trị của đa số đối với thiểu số:</span>
+          <ul class="dash">
+            <li>Trấn áp sự phản kháng của giai cấp bóc lột cũ nhằm bảo vệ độc lập và thành quả cách mạng.</li>
+            <li>Mục tiêu tối hậu là giải phóng giai cấp công nhân đồng thời giải phóng toàn thể xã hội khỏi áp bức.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="rv"><svg class="ic"><use href="#i-ballot"/></svg><p><span class="lead">Đại biểu cho quyền lực và ý chí nhân dân:</span> Lần đầu tiên trong lịch sử, toàn bộ quyền lực nhà nước thực sự thuộc về quảng đại quần chúng lao động.</p></li>
+    </ul>
+  </div></div>
+  <aside class="notes">"Về chính trị, nếu như các giai cấp chủ nô, phong kiến, tư sản chỉ bảo vệ đặc quyền cục bộ của giai cấp mình thì giai cấp công nhân nắm quyền lực không vì mục đích tư lợi, mà để lãnh đạo nhân dân tự giải phóng và làm chủ vận mệnh chính trị của đất nước."</aside>
+</section>
+
+<!-- ============ SLIDE 6 ============ -->
+<section class="slide img-left has-pic" data-part="PHẦN 2: BẢN CHẤT TOÀN DIỆN">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner">
+  <figure class="sideimg pic"><img src="img2/s06-nha-may.jpg" alt="Dây chuyền sản xuất trong nhà máy hiện đại"></figure>
+  <div class="content">
+    <h2 class="title">Bản chất kinh tế của Nhà nước XHCN</h2>
+    <div class="chain">
+      <div class="step rv"><div class="top"><svg class="ic"><use href="#i-base"/></svg><h3>Cơ sở kinh tế quy định:</h3></div><p>Dựa trên <span class="mark">chế độ sở hữu xã hội (công hữu)</span> về tư liệu sản xuất chủ yếu.</p></div>
+      <div class="chev rv" aria-hidden="true"><svg viewBox="0 0 26 14"><path d="M2 2l11 10L24 2"/></svg></div>
+      <div class="step rv"><div class="top"><svg class="ic"><use href="#i-chain"/></svg><h3>Xóa bỏ gốc rễ bóc lột:</h3></div><p>Không còn quan hệ bóc lột thống trị; thiết lập cơ chế phân phối theo lao động là chủ đạo.</p></div>
+      <div class="chev rv" aria-hidden="true"><svg viewBox="0 0 26 14"><path d="M2 2l11 10L24 2"/></svg></div>
+      <div class="step rv"><div class="top"><svg class="ic"><use href="#i-rise"/></svg><h3>Nhiệm vụ kiến tạo năng suất cao:</h3></div>
+        <ul class="dash">
+          <li>Không dừng lại ở việc quốc hữu hóa hay trấn áp, nhiệm vụ sống còn là <span class="mark">thiết lập một kiểu tổ chức lao động mới có năng suất cao hơn CNTB</span>.</li>
+          <li>Tạo lập cơ sở vật chất – kỹ thuật hiện đại để thỏa mãn nhu cầu không ngừng nâng cao của đời sống nhân dân.</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes">"Lênin từng khẳng định: Xét đến cùng, năng suất lao động là cái quan trọng nhất, căn bản nhất cho sự thắng lợi của trật tự xã hội mới. Bản chất kinh tế của Nhà nước XHCN không phải là phân chia sự nghèo khổ, mà là giải phóng sức sản xuất trên nền tảng công hữu để tạo ra nguồn của cải dồi dào cho nhân dân."</aside>
+</section>
+
+<!-- ============ SLIDE 7 ============ -->
+<section class="slide has-pic" data-part="PHẦN 2: BẢN CHẤT TOÀN DIỆN">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <h2 class="title">Bản chất văn hóa – tư tưởng và xã hội</h2>
+    <div class="halves">
+      <div class="half">
+        <figure class="colimg pic"><img src="img2/s07-van-mieu.jpg" alt="Khuê Văn Các, Văn Miếu – Quốc Tử Giám"></figure>
+        <header class="rv"><svg class="ic"><use href="#i-book"/></svg><h3>Về văn hóa – tư tưởng:</h3></header>
+        <ul class="stars">
+          <li class="rv"><svg viewBox="0 0 100 100"><use href="#star"/></svg><p>Lấy <strong>hệ tư tưởng Mác – Lênin</strong> làm nền tảng tinh thần chủ đạo trong toàn bộ đời sống xã hội.</p></li>
+          <li class="rv"><svg viewBox="0 0 100 100"><use href="#star"/></svg><p>Kế thừa tinh hoa văn hóa nhân loại song hành cùng giữ gìn và phát huy bản sắc văn hóa dân tộc.</p></li>
+          <li class="rv"><svg viewBox="0 0 100 100"><use href="#star"/></svg><p>Hình thành con người mới XHCN với lối sống nhân văn, tiến bộ, công bằng và bình đẳng.</p></li>
+        </ul>
+      </div>
+      <div class="half">
+        <figure class="colimg pic"><img src="img2/s07-nong-thon-moi.jpg" alt="Toàn cảnh một xã nông thôn mới"></figure>
+        <header class="rv"><svg class="ic"><use href="#i-equal"/></svg><h3>Về xã hội:</h3></header>
+        <ul class="stars">
+          <li class="rv"><svg viewBox="0 0 100 100"><use href="#star"/></svg><p>Từng bước <strong>thu hẹp khoảng cách giữa các giai cấp, tầng lớp</strong>, giữa nông thôn – thành thị, giữa lao động trí óc – lao động chân tay.</p></li>
+          <li class="rv"><svg viewBox="0 0 100 100"><use href="#star"/></svg><p>Bảo đảm mọi công dân đều bình đẳng trong tiếp cận các nguồn lực và cơ hội phát triển toàn diện.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes">"Trên bình diện văn hóa – xã hội, Nhà nước XHCN xác lập sự thống nhất hài hòa giữa phát triển tinh thần và tiến bộ xã hội. Nhà nước đóng vai trò kiến tạo môi trường để con người vừa thụ hưởng văn hóa, vừa được bảo đảm các quyền bình đẳng thực tế trong học tập, lao động và cống hiến."</aside>
+</section>
+
+<!-- ============ SLIDE 8 ============ -->
+<section class="slide" data-part="PHẦN 3: DÂN CHỦ XHCN &amp; NHÀ NƯỚC XHCN">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <div class="titlerow">
+      <h2 class="title">Mắt xích biện chứng: Dân chủ XHCN &amp; Nhà nước XHCN</h2>
+      <figure class="smallimg late"><img src="img2/s08-tiep-xuc-cu-tri.jpg" alt="Đại biểu Quốc hội tiếp xúc cử tri"></figure>
+    </div>
+    <div class="link">
+      <div class="node rv">
+        <div class="nh"><b>Dân chủ XHCN</b><small>là cơ sở, nền tảng của Nhà nước XHCN:</small></div>
+        <ul class="dash">
+          <li>Nhân dân trực tiếp/gián tiếp tham gia bầu cử, giám sát và kiểm soát quyền lực bộ máy nhà nước.</li>
+          <li>Phát huy trí tuệ của nhân dân, ngăn chặn nguy cơ quan liêu, tha hóa quyền lực.</li>
+        </ul>
+      </div>
+      <div class="arrows rv" aria-hidden="true">
+        <svg viewBox="0 0 120 100">
+          <path class="a" d="M8 36H102" stroke="#9E0F0F" stroke-width="4" fill="none"/>
+          <path d="M100 26l14 10-14 10z" fill="#9E0F0F"/>
+          <path class="a b" d="M112 64H18" stroke="#1C1714" stroke-width="4" fill="none"/>
+          <path d="M20 54L6 64l14 10z" fill="#1C1714"/>
+        </svg>
+      </div>
+      <div class="node rv">
+        <div class="nh"><b>Nhà nước XHCN</b><small>là công cụ thực thi quyền làm chủ của nhân dân:</small></div>
+        <ul class="dash">
+          <li>Thể chế hóa ý chí, nguyện vọng của nhân dân thành Hiến pháp và pháp luật.</li>
+          <li>Là thiết chế bạo lực cách mạng bảo vệ nền dân chủ trước âm mưu chống phá của các thế lực thù địch.</li>
+          <li>Là <strong>"trụ cột", công cụ chủ yếu, vững mạnh nhất</strong> tổ chức xây dựng xã hội mới.</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes">"Dân chủ và Nhà nước XHCN gắn bó hữu cơ với nhau: nếu không có dân chủ thì nhà nước sẽ biến thành công cụ độc quyền của một nhóm người; ngược lại, nếu không có bộ máy nhà nước đủ mạnh để thực thi pháp luật thì dân chủ chỉ là hình thức hoặc rơi vào hỗn loạn."</aside>
+</section>
+
+<!-- ============ SLIDE 9 ============ -->
+<section class="slide" data-part="PHẦN 4: ĐỐI CHIẾU LỊCH SỬ">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <h2 class="title">Bảng so sánh Nhà nước XHCN với các Nhà nước bóc lột</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tiêu chí so sánh</th><th>Nhà nước bóc lột (Chủ nô, Phong kiến, Tư sản)</th><th class="hl">Nhà nước Xã hội Chủ nghĩa</th></tr></thead>
+        <tbody>
+          <tr><th>Cơ sở kinh tế</th><td>Chế độ <strong>chiếm hữu tư nhân</strong> về TLSX.</td><td class="hl">Chế độ <strong>sở hữu xã hội (công hữu)</strong> về TLSX chủ yếu.</td></tr>
+          <tr><th>Giai cấp cầm quyền</th><td>Giai cấp bóc lột (Chủ nô, địa chủ, tư sản) – <strong>Thiểu số</strong>.</td><td class="hl">Giai cấp công nhân và nhân dân lao động – <strong>Tuyệt đại đa số</strong>.</td></tr>
+          <tr><th>Mục đích quyền lực</th><td>Duy trì trật tự bóc lột, bảo vệ đặc quyền thống trị.</td><td class="hl">Xóa bỏ áp bức, bóc lột; giải phóng con người toàn diện.</td></tr>
+          <tr><th>Chức năng chủ yếu</th><td><strong>Trấn áp, cưỡng chế</strong> đối với đa số nhân dân lao động.</td><td class="hl"><strong>Tổ chức và xây dựng</strong> toàn diện xã hội mới.</td></tr>
+          <tr><th>Cơ sở xã hội</th><td>Rất hẹp (chỉ giới hạn trong giai cấp bóc lột).</td><td class="hl">Rất rộng: Liên minh Công nhân – Nông dân – Trí thức.</td></tr>
+          <tr><th>Hệ tư tưởng chủ đạo</th><td>Hệ tư tưởng của giai cấp thống trị bóc lột.</td><td class="hl"><strong>Chủ nghĩa Mác – Lênin</strong>.</td></tr>
+          <tr><th>Xu hướng vận động</th><td>Cố kết bộ máy, duy trì sự tồn tại vĩnh viễn.</td><td class="hl">Từng bước thu hẹp chức năng chính trị và <strong>tự tiêu vong</strong>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div></div>
+  <aside class="notes">"Bảng so sánh 7 tiêu chí này chứng minh toàn diện luận điểm: Nhà nước XHCN không phải là một sự cải biến nửa vời của nhà nước tư sản, mà là một bước nhảy vọt về chất trong lịch sử tiến hóa nhà nước của nhân loại."</aside>
+</section>
+
+<!-- ============ SLIDE 10 ============ -->
+<section class="slide" data-part="PHẦN 5: HỆ THỐNG CHỨC NĂNG">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <h2 class="title">Hệ thống chức năng của Nhà nước XHCN</h2>
+    <div class="tree">
+      <div class="branch rv">
+        <svg class="ic"><use href="#i-scope"/></svg>
+        <h3>Căn cứ vào phạm vi tác động của quyền lực:</h3>
+        <ul class="dash">
+          <li class="thumbed"><img class="thumb pic" src="img2/s10-doi-noi.jpg" alt="Lực lượng làm nhiệm vụ bảo vệ an ninh"><p><strong>Đối nội:</strong> Quản lý kinh tế, duy trì an ninh chính trị, phát triển văn hóa, giáo dục, an sinh xã hội.</p></li>
+          <li class="thumbed"><img class="thumb pic" src="img2/s10-doi-ngoai.jpg" alt="Hoạt động ngoại giao cấp cao"><p><strong>Đối ngoại:</strong> Bảo vệ độc lập chủ quyền, mở rộng hợp tác hữu nghị quốc tế, hội nhập toàn cầu.</p></li>
+        </ul>
+      </div>
+      <div class="branch rv">
+        <svg class="root" viewBox="0 0 100 100" aria-hidden="true"><use href="#star"/></svg><span class="stem" aria-hidden="true"></span>
+        <svg class="ic"><use href="#i-fields"/></svg>
+        <h3>Căn cứ vào lĩnh vực hoạt động:</h3>
+        <ul class="dash"><li>Chức năng chính trị, kinh tế, văn hóa, xã hội...</li></ul>
+      </div>
+      <div class="branch core rv">
+        <svg class="ic"><use href="#i-scale"/></svg>
+        <h3>Căn cứ vào tính chất quyền lực nhà nước (Cốt lõi nhất):</h3>
+        <div class="vs">
+          <div><span class="lead">Chức năng giai cấp (Trấn áp):</span>Trấn áp phần tử phá hoại, bảo vệ thành quả cách mạng.</div>
+          <div class="build"><span class="lead">Chức năng xã hội (Tổ chức &amp; xây dựng):</span>Phát triển sản xuất, nâng cao đời sống nhân dân.</div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes">"Giáo trình tiếp cận chức năng nhà nước ở 3 góc độ. Trong đó, giác độ tính chất quyền lực phản ánh rõ nét nhất bước chuyển bản chất từ một công cụ cai trị sang một bộ máy phục vụ xã hội."</aside>
+</section>
+
+<!-- ============ SLIDE 11 ============ -->
+<section class="slide" data-part="PHẦN 5: HỆ THỐNG CHỨC NĂNG">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <h2 class="title">Trọng tâm chức năng: Quan hệ giữa Trấn áp và Tổ chức – Xây dựng</h2>
+    <div class="bars rv" aria-hidden="true">
+      <div class="bar"><span>Trấn áp</span><div class="track"><div class="fill f1"></div></div></div>
+      <div class="bar"><span style="color:var(--red)">Tổ chức – xây dựng</span><div class="track"><div class="fill f2"></div></div></div>
+    </div>
+    <div class="balance">
+      <figure class="photo portrait pic"><img src="img2/s11-lenin.jpg" alt="Chân dung V.I. Lênin"><figcaption>V.I. Lênin</figcaption></figure>
+      <div class="side weak rv">
+        <h3>Trấn áp chỉ là phương tiện – tiền đề bảo vệ:</h3>
+        <p class="lq"><b>V.I. Lênin khẳng định:</b> "Bất cứ một nhà nước nào cũng đều có nghĩa là dùng bạo lực; nhưng toàn bộ sự khác nhau là ở chỗ dùng bạo lực đối với những người bị bóc lột hay đối với kẻ đi bóc lột".</p>
+        <ul class="dash"><li>Trấn áp là tất yếu trong thời kỳ quá độ nhưng chỉ giữ vai trò bảo đảm môi trường hòa bình, ổn định.</li></ul>
+      </div>
+      <div class="side strong rv">
+        <h3>Tổ chức, xây dựng là nhiệm vụ căn bản, quyết định nhất:</h3>
+        <p class="lq"><b>V.I. Lênin nhấn mạnh:</b> Chuyên chính vô sản "không phải chỉ là bạo lực đối với bọn bóc lột, và cũng không phải chủ yếu là bạo lực... mà cái bảo đảm sức sống và thắng lợi của nó chính là việc giai cấp vô sản đưa ra được và thực hiện được kiểu tổ chức lao động cao hơn so với CNTB".</p>
+        <ul class="dash"><li>Tổ chức quản lý kinh tế là khâu <strong>then chốt, khó khăn và phức tạp nhất</strong>.</li></ul>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes">"Nhiều người lầm tưởng chuyên chính vô sản đồng nghĩa với bạo lực sắt đá. Tuy nhiên, các nhà kinh điển đã chỉ rõ: bạo lực chỉ dọn đường, còn việc xây dựng thành công nền kinh tế mới với năng suất vượt trội mới là yếu tố quyết định sự tồn vong và thắng lợi của CNXH."</aside>
+</section>
+
+<!-- ============ SLIDE 12 ============ -->
+<section class="slide has-pic" data-part="PHẦN 6: VẬN DỤNG THỰC TIỄN">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content">
+    <figure class="strip pic"><img src="img2/s12-hien-phap.jpg" alt="Bìa Hiến pháp nước Cộng hòa Xã hội Chủ nghĩa Việt Nam năm 2013"></figure>
+    <h2 class="title">Thực tiễn: 6 đặc trưng của Nhà nước pháp quyền XHCN ở Việt Nam</h2>
+    <div>
+      <div>
+        <ol class="six">
+          <li class="rv"><span class="num">1</span><p><span class="lead">Bản chất nhân dân:</span> Nhà nước của nhân dân, do nhân dân, vì nhân dân; tất cả quyền lực thuộc về nhân dân.</p></li>
+          <li class="rv"><span class="num">2</span><p><span class="lead">Thượng tôn pháp luật:</span> Tổ chức và hoạt động trên cơ sở Hiến pháp và pháp luật; pháp luật giữ vị trí tối thượng trong điều chỉnh xã hội.</p></li>
+          <li class="rv"><span class="num">3</span><p><span class="lead">Thống nhất và kiểm soát quyền lực:</span> Quyền lực nhà nước là thống nhất, có sự phân công rõ ràng, phối hợp nhịp nhàng và kiểm soát giữa 3 cơ quan: lập pháp, hành pháp, tư pháp (khác với mô hình tam quyền phân lập tư sản).</p></li>
+          <li class="rv"><span class="num">4</span><p><span class="lead">Sự lãnh đạo của Đảng:</span> Đặt dưới sự lãnh đạo của Đảng Cộng sản Việt Nam (Điều 4 Hiến pháp) và chịu sự giám sát của nhân dân theo cơ chế <em>"Dân biết, dân bàn, dân làm, dân kiểm tra"</em>.</p></li>
+          <li class="rv"><span class="num">5</span><p><span class="lead">Đề cao quyền con người:</span> Tôn trọng, bảo đảm và bảo vệ quyền con người, coi con người là trung tâm của sự phát triển; dân chủ đi đôi với kỷ cương.</p></li>
+          <li class="rv"><span class="num">6</span><p><span class="lead">Nguyên tắc tổ chức:</span> Hoạt động theo nguyên tắc <strong>tập trung dân chủ</strong>, kết hợp phân công, phân cấp và bảo đảm chỉ đạo thống nhất của Trung ương.</p></li>
+        </ol>
+        <p class="source rv">(Căn cứ theo Giáo trình Chủ nghĩa xã hội khoa học, trang 84–86 &amp; Hiến pháp 2013)</p>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes">"Tại Việt Nam, bản chất của Nhà nước XHCN được hiện thực hóa qua mô hình Nhà nước pháp quyền XHCN với 6 đặc trưng cốt lõi. Chúng ta khẳng định quyền lực nhà nước là thống nhất chứ không phân chia thành các cực đối lập, đồng thời phát huy quyền làm chủ thực sự của nhân dân dưới sự lãnh đạo của Đảng."</aside>
+</section>
+
+<!-- ============ SLIDE 13 ============ -->
+<section class="slide">
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <div class="inner"><div class="content concl-wrap">
+    <h2 class="title">Kết luận</h2>
+    <div>
+      <h3 class="rv">Tóm tắt 3 kết luận cốt lõi:</h3>
+      <ol class="concl">
+        <li class="rv"><span class="n">1</span><p class="lead">Khác biệt về bản chất:</p><p>Nhà nước XHCN là chính quyền của tuyệt đại đa số nhân dân, dựa trên công hữu, xóa bỏ nguồn gốc bóc lột.</p></li>
+        <li class="rv"><span class="n">2</span><p class="lead">Khác biệt về chức năng:</p><p>Chuyển trọng tâm từ cưỡng bức, trấn áp sang tổ chức, xây dựng đời sống kinh tế – xã hội mới.</p></li>
+        <li class="rv"><span class="n">3</span><p class="lead">Khác biệt về sứ mệnh lịch sử:</p><p>Là kiểu nhà nước tiến bộ nhất và cũng là kiểu nhà nước cuối cùng, chuẩn bị điều kiện để tự tiêu vong trong xã hội tương lai.</p></li>
+      </ol>
+    </div>
+  </div></div>
+  <aside class="notes"></aside>
+</section>
+
+<!-- ============ SLIDE 14: MIND MAP ============ -->
+<section class="slide mmslide" data-minfit="0.6">
+  <svg class="drum"><use href="#drum"/></svg>
+  <div class="inner"><div class="content mmwrap">
+    <div class="mm-eyebrow">Sơ đồ tư duy</div>
+    <div class="mm" id="mindmap">
+      <svg class="mm-lines" aria-hidden="true"></svg>
+      <div class="mm-col mm-left">
+        <section class="br" data-b="1" style="--k:1">
+          <header class="bh"><span class="bn">1</span><h3>Sự ra đời</h3></header>
+          <ul class="dash">
+            <li>Kết quả của cách mạng XHCN, do Đảng Cộng sản lãnh đạo</li>
+            <li>Công xã Pari (1871): mầm mống đầu tiên</li>
+            <li>Nhà nước Xô viết (1917): nhà nước XHCN đầu tiên</li>
+            <li>Việt Nam: Nhà nước VNDCCH (1945) → CHXHCN Việt Nam (1976)</li>
+          </ul>
+        </section>
+        <section class="br" data-b="2" style="--k:2">
+          <header class="bh"><span class="bn">2</span><h3>Khái niệm</h3></header>
+          <ul class="dash">
+            <li>Sự thống trị chính trị thuộc về giai cấp công nhân</li>
+            <li>Sứ mệnh: xây dựng thành công CNXH</li>
+            <li>Đưa nhân dân lao động lên địa vị làm chủ</li>
+            <li>"Nhà nước nửa nhà nước" (Lênin) – sẽ tự tiêu vong</li>
+          </ul>
+        </section>
+        <section class="br focus" data-b="3" style="--k:3">
+          <header class="bh"><span class="bn">3</span><h3>Bản chất</h3><span class="tag">Trọng tâm</span></header>
+          <ul class="dash">
+            <li><b>Chính trị:</b> mang bản chất giai cấp công nhân; đa số thống trị thiểu số</li>
+            <li><b>Kinh tế:</b> dựa trên chế độ công hữu về tư liệu sản xuất chủ yếu; xóa bỏ bóc lột</li>
+            <li><b>Văn hóa – xã hội:</b> nền tảng chủ nghĩa Mác – Lênin; các giai cấp bình đẳng, khoảng cách dần thu hẹp</li>
+          </ul>
+        </section>
+      </div>
+      <div class="mm-hub">
+        <div class="hub">
+          <svg class="hubstar" viewBox="0 0 100 100" aria-hidden="true"><use href="#star"/></svg>
+          <p class="hub-t">NHÀ NƯỚC XHCN – KIỂU NHÀ NƯỚC MỚI</p>
+          <p class="hub-s">Nhóm 4 – Chủ nghĩa xã hội khoa học</p>
+        </div>
+      </div>
+      <div class="mm-col mm-right">
+        <section class="br focus" data-b="4" style="--k:4">
+          <header class="bh"><span class="bn">4</span><h3>So sánh</h3><span class="tag">Trọng tâm</span></header>
+          <div class="cmp">
+            <span></span><span class="ch">Nhà nước bóc lột</span><span class="ar">↔</span><span class="ch xh">Nhà nước XHCN</span>
+            <span class="ck">Cơ sở kinh tế:</span><span>Tư hữu</span><span class="ar">↔</span><span class="xh">Công hữu</span>
+            <span class="ck">Giai cấp cầm quyền:</span><span>Thiểu số</span><span class="ar">↔</span><span class="xh">Đa số nhân dân lao động</span>
+            <span class="ck">Mục đích:</span><span>Duy trì bóc lột</span><span class="ar">↔</span><span class="xh">Xóa bỏ bóc lột</span>
+            <span class="ck">Chức năng chủ yếu:</span><span>Trấn áp</span><span class="ar">↔</span><span class="xh">Tổ chức, xây dựng</span>
+            <span class="ck">Cơ sở xã hội:</span><span>Hẹp</span><span class="ar">↔</span><span class="xh">Rộng (công nhân – nông dân – trí thức)</span>
+            <span class="ck">Xu hướng tồn tại:</span><span>Duy trì vĩnh viễn</span><span class="ar">↔</span><span class="xh">Tự tiêu vong</span>
+          </div>
+        </section>
+        <section class="br" data-b="5" style="--k:5">
+          <header class="bh"><span class="bn">5</span><h3>Chức năng</h3></header>
+          <ul class="dash">
+            <li>Theo phạm vi: đối nội / đối ngoại</li>
+            <li>Theo lĩnh vực: chính trị – kinh tế – văn hóa – xã hội</li>
+            <li>Theo tính chất: trấn áp (thứ yếu) / <strong>tổ chức, xây dựng (CHỦ YẾU)</strong></li>
+          </ul>
+        </section>
+        <section class="br" data-b="6" style="--k:6">
+          <header class="bh"><span class="bn">6</span><h3>Liên hệ Việt Nam</h3></header>
+          <ul class="dash">
+            <li>Hiến pháp 2013, Điều 2: Nhà nước của Nhân dân, do Nhân dân, vì Nhân dân</li>
+            <li>Nền tảng: liên minh công nhân – nông dân – trí thức</li>
+            <li>Quyền lực thống nhất, có phân công – phối hợp – kiểm soát</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div></div>
+  <aside class="notes"></aside>
+</section>
+
+<!-- ============ SLIDE 15 ============ -->
+<section class="slide end">
+  <img class="bgimg" src="img2/s01-quoc-hoi.jpg" alt="" aria-hidden="true">
+  <div class="veil"></div>
+  <svg class="drum"><use href="#drum"/></svg>
+  <svg class="skyline"><use href="#sky"/></svg>
+  <svg class="cornerflag" viewBox="0 0 340 220" aria-hidden="true">
+    <path class="f2" d="M0 0H300Q330 40 300 80Q260 140 200 120Q120 100 60 150Q20 180 0 220Z"/>
+    <path class="f1" d="M0 0H220Q240 40 200 70Q150 110 90 95Q40 85 0 120Z"/>
+  </svg>
+  <svg class="silk" viewBox="0 0 1600 260" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="inner"><div class="content">
+    <svg class="bigstar rv" viewBox="0 0 100 100" aria-hidden="true"><use class="twinkle" href="#star"/></svg>
+    <p class="thanks rv">Cảm ơn thầy cô và các bạn đã chú ý lắng nghe!</p>
+    <h2 class="qa rv">Mời thảo luận (Q&amp;A)</h2>
+    <p class="invite rv">Mời thầy cô và cả lớp đặt câu hỏi giao lưu, thảo luận.</p>
+  </div></div>
+  <aside class="notes"></aside>
+</section>
+
+</main>
+
+<div class="notes-panel" id="notesPanel" aria-live="polite">
+  <div class="lbl" id="notesLbl">Lời bình gợi ý</div>
+  <div class="txt" id="notesTxt"></div>
+</div>
+
+<footer class="footer">
+  <div class="progress" id="progress"></div>
+  <span class="dept">BỘ MÔN CHỦ NGHĨA XÃ HỘI KHOA HỌC</span>
+  <div class="ctrls">
+    <button id="prev" aria-label="Slide trước">‹</button>
+    <span class="counter" id="counter">1 / 15</span>
+    <button id="next" aria-label="Slide sau">›</button>
+    <button id="notesBtn" aria-pressed="false" title="Ghi chú (N)">N<span class="hide-s">&nbsp;Ghi chú</span></button>
+    <button id="fsBtn" title="Toàn màn hình (F)" aria-label="Toàn màn hình"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 5V1h4M11 1h4v4M15 11v4h-4M5 15H1v-4"/></svg></button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  // bronze drum (trống đồng): 14-ray star, rings, birds, saw-tooth band
+  const g=document.getElementById('drumG');
+  let s='';
+  const pts=[];for(let i=0;i<28;i++){const r=i%2?38:120;const a=i*Math.PI/14-Math.PI/2;pts.push((r*Math.cos(a)).toFixed(1)+','+(r*Math.sin(a)).toFixed(1));}
+  s+='<polygon points="'+pts.join(' ')+'" fill="currentColor" stroke="none"/>';
+  [135,150,205,220,300,312,395,410,470,488].forEach(r=>s+='<circle r="'+r+'"/>');
+  for(let i=0;i<48;i++){const a=i*Math.PI*2/48;s+='<circle r="5" cx="'+(178*Math.cos(a)).toFixed(1)+'" cy="'+(178*Math.sin(a)).toFixed(1)+'"/>';}
+  for(let i=0;i<36;i++){s+='<path transform="rotate('+(i*10)+')" d="M0 -232 L12 -262 L0 -254 L-12 -262Z M0 -270 L0 -288"/>';}
+  for(let i=0;i<18;i++){s+='<g transform="rotate('+(i*20)+')"><path d="M-30 -330 Q0 -380 30 -330 Q10 -346 0 -372 Q-10 -346 -30 -330Z" fill="currentColor" stroke="none"/><circle cx="0" cy="-352" r="4"/></g>';}
+  for(let i=0;i<72;i++){s+='<path transform="rotate('+(i*5)+')" d="M-14 -420 L0 -455 L14 -420"/>';}
+  g.innerHTML=s;
+
+  // Hà Nội skyline: Cột cờ, Chùa Một Cột, Tháp Rùa, tháp chùa Trấn Quốc, cổng chùa
+  const k=[];const R=(x,y,w,h)=>k.push('<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'"/>');
+  [[0,170,60,50],[60,150,40,70],[100,180,70,40],[340,175,90,45],[640,160,50,60],[690,185,60,35],[900,170,70,50],[970,150,36,70],[1180,175,80,45],[1260,140,46,80],[1306,165,60,55],[1460,155,50,65],[1510,175,90,45]].forEach(a=>R(...a));
+  R(170,175,140,45);R(190,150,100,25);R(208,128,64,22);R(228,40,24,88);R(220,30,40,12);R(238,2,3,28);k.push('<path d="M241 4 L272 10 L241 17Z"/>');
+  R(500,150,14,70);R(470,140,74,10);R(480,112,54,28);k.push('<path d="M456 116 Q507 92 558 116 L548 104 Q507 82 466 104Z"/>');R(503,84,8,10);
+  R(770,170,110,50);R(785,128,80,42);R(800,96,50,32);R(812,72,26,24);k.push('<path d="M760 172 L890 172 L878 162 L772 162Z M776 130 L874 130 L864 120 L786 120Z M792 98 L858 98 L850 88 L800 88Z M806 74 L844 74 L825 54Z"/>');
+  for(let i=0;i<9;i++){const w=60-i*5,y=210-i*20;R(1080-w/2,y,w,16);k.push('<path d="M'+(1080-w/2-8)+' '+(y+2)+' L'+(1080+w/2+8)+' '+(y+2)+' L'+(1080+w/2)+' '+(y-4)+' L'+(1080-w/2)+' '+(y-4)+'Z"/>');}
+  k.push('<path d="M1072 34 L1088 34 L1080 6Z"/>');
+  R(1390,160,12,60);R(1438,160,12,60);k.push('<path d="M1376 162 Q1420 140 1464 162 L1456 150 Q1420 130 1384 150Z"/>');R(1380,180,80,6);
+  document.getElementById('skyG').innerHTML=k.join('');
+
+  // silk waves (periodic, so the drift loops seamlessly)
+  function wave(base,amp,phase){let d='M0 '+base+' Q200 '+(base-amp*phase)+' 400 '+base;for(let x=800;x<=3600;x+=400){d+=' T'+x+' '+base;}return d+' L3600 260 L0 260Z';}
+  document.querySelectorAll('svg.silk').forEach(sv=>{
+    [['w1',110,55,1],['w2',155,45,-1],['w3',200,34,1]].forEach(([c,b,a,ph])=>{const p=document.createElementNS(NS,'path');p.setAttribute('class',c);p.setAttribute('d',wave(b,a,ph));sv.appendChild(p);});
+  });
+
+  // slides
+  const slides=[...document.querySelectorAll('.slide')];
+  slides.forEach(sl=>{
+    const part=sl.getAttribute('data-part');
+    if(part){const h=document.createElement('div');h.className='hbar';h.innerHTML='<svg viewBox="0 0 100 100"><use href="#star"/></svg><span>'+part+'</span>';sl.querySelector('.inner').prepend(h);}
+    sl.querySelectorAll('.rv').forEach((el,i)=>el.style.setProperty('--i',i));
+    sl.querySelectorAll('tbody tr').forEach((el,i)=>el.style.setProperty('--i',i));
+    sl.querySelectorAll('.tl').forEach((el,i)=>el.style.setProperty('--i',i));
+  });
+
+  let cur=0;
+  const prog=document.getElementById('progress'),counter=document.getElementById('counter');
+  const panel=document.getElementById('notesPanel'),ntxt=document.getElementById('notesTxt'),nlbl=document.getElementById('notesLbl'),nbtn=document.getElementById('notesBtn');
+  function go(n){
+    n=Math.max(0,Math.min(slides.length-1,n));cur=n;
+    slides.forEach((s,i)=>{s.classList.toggle('active',i===n);s.classList.toggle('past',i<n);s.setAttribute('aria-hidden',i===n?'false':'true');});
+    slides[n].querySelector('.inner').scrollTop=0;
+    prog.style.width=((n+1)/slides.length*100)+'%';
+    counter.textContent=(n+1)+' / '+slides.length;
+    const t=slides[n].querySelector('aside.notes').textContent.trim();
+    nlbl.textContent='Lời bình gợi ý – Slide '+(n+1);
+    ntxt.textContent=t||'(Slide này không có lời bình gợi ý.)';
+    try{history.replaceState(null,'','#s'+(n+1));}catch(e){}
+  }
+  function toggleNotes(){const o=panel.classList.toggle('open');nbtn.setAttribute('aria-pressed',o?'true':'false');}
+  function fs(){const d=document;if(d.fullscreenElement){d.exitFullscreen&&d.exitFullscreen().catch(()=>{});}else{const el=d.documentElement;el.requestFullscreen&&el.requestFullscreen().catch(()=>{});}}
+  document.getElementById('prev').onclick=e=>{e.stopPropagation();go(cur-1)};
+  document.getElementById('next').onclick=e=>{e.stopPropagation();go(cur+1)};
+  nbtn.onclick=e=>{e.stopPropagation();toggleNotes()};
+  document.getElementById('fsBtn').onclick=e=>{e.stopPropagation();fs()};
+  document.addEventListener('keydown',e=>{
+    if(e.metaKey||e.ctrlKey||e.altKey)return;const k=e.key;
+    if(['ArrowRight','PageDown',' ','Enter'].includes(k)){e.preventDefault();go(cur+1);}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(k)){e.preventDefault();go(cur-1);}
+    else if(k==='Home')go(0);else if(k==='End')go(slides.length-1);
+    else if(k==='n'||k==='N')toggleNotes();else if(k==='f'||k==='F')fs();
+  });
+  let moved=false;
+  document.getElementById('deck').addEventListener('click',e=>{
+    if(moved)return;const sel=window.getSelection&&String(window.getSelection());if(sel)return;
+    if(e.clientX<window.innerWidth*0.18)go(cur-1);else go(cur+1);
+  });
+  let sx=0,sy=0;
+  document.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;moved=false;},{passive:true});
+  document.addEventListener('touchmove',e=>{const t=e.touches[0];if(Math.abs(t.clientX-sx)>10||Math.abs(t.clientY-sy)>10)moved=true;},{passive:true});
+  document.addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)go(dx<0?cur+1:cur-1);setTimeout(()=>{moved=false},350);},{passive:true});
+  // fit-to-screen: on a projector/laptop each slide must fit without scrolling;
+  // text starts at the large hall size and only shrinks (max 25%) if a slide would overflow.
+  function fit(){
+    const wide=window.innerWidth>960&&window.innerHeight>520;
+    slides.forEach(sl=>{
+      sl.style.setProperty('--fit','1');
+      if(!wide)return;
+      const inn=sl.querySelector('.inner');let f=1,n=0;const min=parseFloat(sl.dataset.minfit||'0.76');
+      while(inn.scrollHeight>inn.clientHeight+1&&f>min&&n++<30){f-=0.025;sl.style.setProperty('--fit',f.toFixed(3));}
+    });
+  }
+  // mind map connectors: hub edge → each branch header, smooth S-curves
+  function drawMM(){
+    const mm=document.getElementById('mindmap');if(!mm)return;
+    const svg=mm.querySelector('.mm-lines');svg.innerHTML='';
+    if(window.innerWidth<=960)return;
+    const B=mm.getBoundingClientRect(),H=mm.querySelector('.hub').getBoundingClientRect();
+    const cy=H.top+H.height/2-B.top;let out='';
+    mm.querySelectorAll('.br').forEach((br,i)=>{
+      const k=+br.dataset.b;br.style.setProperty('--k',k);
+      const r=br.getBoundingClientRect(),hd=br.querySelector('.bh').getBoundingClientRect();
+      const left=r.right<H.left;
+      const sx=(left?H.left:H.right)-B.left, ex=(left?r.right:r.left)-B.left;
+      const ey=hd.top+hd.height/2-B.top;
+      const sy=cy+(ey-cy)*0.18, mx=(sx+ex)/2;
+      out+='<path pathLength="1" style="--k:'+k+'" class="'+(br.classList.contains('focus')?'f':'')+'" d="M'+sx.toFixed(1)+' '+sy.toFixed(1)+' C'+mx.toFixed(1)+' '+sy.toFixed(1)+' '+mx.toFixed(1)+' '+ey.toFixed(1)+' '+ex.toFixed(1)+' '+ey.toFixed(1)+'"/>';
+      out+='<circle r="4.5" cx="'+ex.toFixed(1)+'" cy="'+ey.toFixed(1)+'"/>';
+    });
+    svg.innerHTML=out;
+  }
+  const _fit=fit;fit=function(){_fit();drawMM();};
+  let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(fit,150);});
+  fit();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  document.querySelectorAll('img').forEach(im=>{if(!im.complete)im.addEventListener('load',fit,{once:true});});
+  const m=/^#s(\d+)$/.exec(location.hash);go(m?parseInt(m[1],10)-1:0);
+})();
+</script>
+
+</body></html>
