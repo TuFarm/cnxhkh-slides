@@ -1,0 +1,7 @@
+# AI agent / tooling folders (Impeccable skill installs, local config)
+.agent/
+.agents/
+.claude/
+.codex/
+.gemini/
+.impeccable/
