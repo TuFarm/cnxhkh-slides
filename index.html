@@ -55,6 +55,7 @@ figure{margin:0}
 .hbar span{font-family:var(--f-label);font-weight:800;font-size:var(--t-sm);letter-spacing:.08em;text-transform:uppercase}
 
 h1,h2,h3{margin:0;text-wrap:balance}
+p,li,td,th,figcaption,blockquote,.lq{text-wrap:pretty}
 h2.title{font-family:var(--f-display);font-weight:800;text-transform:uppercase;color:var(--red);font-size:var(--t-h2);line-height:1.12;letter-spacing:.012em}
 h3{font-family:var(--f-label);font-weight:800;color:var(--red);text-transform:uppercase;font-size:var(--t-h3);letter-spacing:.04em;line-height:1.35;margin-bottom:var(--s1)}
 .lead{font-weight:700;color:var(--ink)}
@@ -159,6 +160,8 @@ aside.notes{display:none}
 .cover h1{font-family:var(--f-display);font-weight:900;color:var(--red);text-transform:uppercase;font-size:var(--t-h1);line-height:1.08;letter-spacing:.01em;margin:var(--s1) 0 var(--s2)}
 .cover .sub{font-family:var(--f-quote);font-style:italic;font-size:1.34em;line-height:1.42;border-left:4px solid var(--star);padding-left:var(--s2);max-width:44ch}
 .cover .info{margin-top:var(--s3);display:inline-block;border-top:2px solid var(--red);padding-top:var(--s1);font-weight:600;font-size:var(--t-sm)}
+.cover .lecturer{display:block;margin-top:.3em}
+.cover .lecturer b{font-weight:700;color:var(--red)}
 
 /* ===== S2 agenda (red) ===== */
 .slide.red{background:var(--red);color:var(--cream)}
@@ -350,8 +353,8 @@ tbody tr{opacity:0}
 .bh .tag{margin-left:auto;align-self:center}
 .br .dash li{margin-top:.2em}
 .br b{color:var(--red)}
-.cmp{display:grid;grid-template-columns:auto minmax(0,.8fr) 1.2em minmax(0,1fr);column-gap:.6em;row-gap:.14em;align-items:baseline}
-.cmp .ch{font:800 .84em var(--f-label);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-70);padding-bottom:.2em;border-bottom:1px solid var(--red-25)}
+.cmp{display:grid;grid-template-columns:auto minmax(0,.86fr) 1.2em minmax(0,1fr);column-gap:.6em;row-gap:.14em;align-items:baseline}
+.cmp .ch{font:800 .84em var(--f-label);letter-spacing:0;text-transform:uppercase;color:var(--ink-70);padding-bottom:.2em;border-bottom:1px solid var(--red-25)}
 .cmp .ch.xh{color:var(--red)}
 .cmp .ck{font-weight:700}
 .cmp .ar{color:var(--red);text-align:center}
@@ -564,7 +567,7 @@ tbody tr{opacity:0}
       <div class="meta rv">Trường Đại học Quốc tế, ĐHQG-HCM</div>
       <h1 class="rv">BẢN CHẤT VÀ CHỨC NĂNG CỦA NHÀ NƯỚC XÃ HỘI CHỦ NGHĨA</h1>
       <p class="sub rv">Vì sao Nhà nước XHCN là kiểu nhà nước mới, khác về chất so với các kiểu nhà nước bóc lột trong lịch sử?</p>
-      <div class="info rv">Môn học: Chủ nghĩa xã hội khoa học – Nhóm thực hiện: Nhóm 4.</div>
+      <div class="info rv">Môn học: Chủ nghĩa xã hội khoa học – Nhóm thực hiện: Nhóm 4.<span class="lecturer">Giảng viên: <b>Phạm Thị Minh Nguyệt</b></span></div>
     </div>
     <figure class="qr pic">
       <img src="img2/qr.png" alt="Mã QR mở bài thuyết trình tại tufarm.github.io/cnxhkh-slides">
@@ -596,7 +599,7 @@ tbody tr{opacity:0}
       </ol>
     </div>
   </div></div>
-  <aside class="notes">"Kính thưa thầy cô và các bạn, để trả lời câu hỏi cốt lõi của đề tài, nhóm chúng tôi triển khai qua 6 phần logic: từ cơ sở kinh tế - xã hội dẫn đến sự ra đời tất yếu, phân tích 3 phương diện bản chất, đối chiếu với các nhà nước áp bức trong lịch sử, làm rõ quy luật chức năng và liên hệ trực tiếp với thực tiễn xây dựng Nhà nước pháp quyền tại Việt Nam."</aside>
+  <aside class="notes">"Kính thưa cô và các bạn, để trả lời câu hỏi cốt lõi của đề tài, nhóm chúng tôi triển khai qua 6 phần logic: từ cơ sở kinh tế - xã hội dẫn đến sự ra đời tất yếu, phân tích 3 phương diện bản chất, đối chiếu với các nhà nước áp bức trong lịch sử, làm rõ quy luật chức năng và liên hệ trực tiếp với thực tiễn xây dựng Nhà nước pháp quyền tại Việt Nam."</aside>
 </section>
 
 <!-- ============ SLIDE 3 ============ -->
@@ -1104,9 +1107,9 @@ tbody tr{opacity:0}
   <svg class="silk" viewBox="0 0 1600 260" preserveAspectRatio="none" aria-hidden="true"></svg>
   <div class="inner"><div class="content">
     <svg class="bigstar rv" viewBox="0 0 100 100" aria-hidden="true"><use class="twinkle" href="#star"/></svg>
-    <p class="thanks rv">Cảm ơn thầy cô và các bạn đã chú ý lắng nghe!</p>
+    <p class="thanks rv">Cảm ơn cô và các bạn đã chú ý lắng nghe!</p>
     <h2 class="qa rv">Mời thảo luận (Q&amp;A)</h2>
-    <p class="invite rv">Mời thầy cô và cả lớp đặt câu hỏi giao lưu, thảo luận.</p>
+    <p class="invite rv">Mời cô và cả lớp đặt câu hỏi giao lưu, thảo luận.</p>
   </div></div>
   <aside class="notes"></aside>
 </section>
@@ -1120,7 +1123,7 @@ tbody tr{opacity:0}
 
 <footer class="footer">
   <div class="progress" id="progress"></div>
-  <span class="dept">BỘ MÔN CHỦ NGHĨA XÃ HỘI KHOA HỌC</span>
+  <span class="dept">CHỦ NGHĨA XÃ HỘI KHOA HỌC</span>
   <div class="ctrls">
     <button id="prev" aria-label="Slide trước">‹</button>
     <span class="counter" id="counter" aria-live="polite" aria-atomic="true">1 / 15</span>
@@ -1171,6 +1174,24 @@ tbody tr{opacity:0}
     sl.querySelectorAll('tbody tr').forEach((el,i)=>el.style.setProperty('--i',i));
     sl.querySelectorAll('.tl').forEach((el,i)=>el.style.setProperty('--i',i));
   });
+
+  // Vietnamese writes every syllable as its own word, so the browser happily breaks a compound
+  // ("nhà | nước", "tổ | chức"). Glue the deck's compounds, names and numbers with no-break spaces
+  // so lines only break between meaningful words. The source copy is untouched.
+  const GLUE=('xã hội chủ nghĩa|chủ nghĩa xã hội|Mác – Lênin|V.I. Lênin|Phạm Thị Minh Nguyệt|Đảng Cộng sản|Việt Nam Dân chủ Cộng hòa|Cộng hòa Xã hội Chủ nghĩa|Tháng Mười Nga|Công xã Paris|quốc hữu hóa|tư liệu sản xuất|lực lượng sản xuất|quan hệ sản xuất|tam quyền phân lập|nửa nhà nước|'+
+   'nhà nước|giai cấp|công nhân|nhân dân|lao động|xã hội|chủ nghĩa|cách mạng|sản xuất|tư liệu|bóc lột|trấn áp|tổ chức|xây dựng|chức năng|kinh tế|văn hóa|chính trị|quyền lực|thống trị|thống nhất|kiểm soát|pháp luật|Hiến pháp|Việt Nam|Cộng hòa|dân chủ|cộng sản|tư sản|vô sản|tiêu vong|đa số|thiểu số|tuyệt đại|năng suất|hiện đại|tư tưởng|phát triển|bình đẳng|nguồn lực|cơ hội|tiếp cận|khoảng cách|thu hẹp|quan liêu|tha hóa|thể chế|nguyện vọng|thế lực|thù địch|chống phá|âm mưu|trụ cột|chủ yếu|vững mạnh|hội nhập|toàn cầu|hữu nghị|quốc tế|chủ quyền|độc lập|an ninh|giáo dục|an sinh|phá hoại|thành quả|đời sống|căn bản|quyết định|then chốt|phức tạp|khó khăn|quá độ|hòa bình|ổn định|bảo đảm|bảo vệ|môi trường|tối thượng|điều chỉnh|phân công|phối hợp|nhịp nhàng|rõ ràng|cơ quan|lập pháp|hành pháp|tư pháp|lãnh đạo|giám sát|cơ chế|kiểm tra|tôn trọng|con người|chủ thể|trung tâm|kỷ cương|nguyên tắc|tập trung|phân cấp|chỉ đạo|Trung ương|chính quyền|nguồn gốc|cưỡng bức|trọng tâm|sứ mệnh|lịch sử|tiến bộ|cuối cùng|điều kiện|tương lai|bản chất|khác biệt|chuyên chính|bạo lực|thắng lợi|sức sống|thực hiện|cơ sở|vật chất|kỹ thuật|nhu cầu|nâng cao|thiết lập|phân phối|chủ đạo|quan hệ|sở hữu|công hữu|chiếm hữu|tư nhân|áp bức|giải phóng|toàn diện|toàn thể|toàn bộ|mục tiêu|tối hậu|phản kháng|đại biểu|ý chí|quần chúng|quảng đại|lợi ích|kế thừa|tinh hoa|nhân loại|song hành|giữ gìn|phát huy|bản sắc|dân tộc|hình thành|lối sống|nhân văn|công bằng|tầng lớp|nông thôn|thành thị|trí óc|chân tay|công dân|trực tiếp|gián tiếp|bầu cử|trí tuệ|ngăn chặn|nguy cơ|mắt xích|biện chứng|đối chiếu|thực tiễn|vận dụng|pháp quyền|đặc trưng|đối nội|đối ngoại|tiền đề|khách quan|phương thức|xác lập|mâu thuẫn|gay gắt|lực lượng|giác ngộ|phôi thai|mầm mống|Xô viết|thế giới|định nghĩa|thuộc tính|nguyên nghĩa|đối tượng|vận hành|hành chính|cưỡng chế|quản lý|quy luật|giai đoạn|hoàn thiện|phương tiện|nhiệm vụ|kiến tạo|sống còn|gốc rễ|tham gia|thảo luận|giao lưu|lắng nghe|chú ý|câu hỏi|thuyết trình|giảng viên|thời kỳ|tất yếu|vai trò|kiểu mới|đầu tiên|hệ thống|phạm vi|tác động|lĩnh vực|hoạt động|tính chất|cốt lõi|phần tử|xã hội hóa|phát triển cao|tiêu biểu|hệ tư tưởng|chủ nghĩa|thống trị|cầm quyền|so sánh|tiêu chí|vĩnh viễn|thay thế|củng cố|bộ máy|cống hiến|thụ hưởng|tinh thần|kiến thức|kết luận|khoa học|môn học|thực hiện|cuộc sống|tổ chức lao động|địa vị|làm chủ|đời sống xã hội|XHCN Việt Nam|Nhân dân|Đại học|Quốc tế|ĐHQG-HCM|tiêu chí|đặc quyền|trật tự|liên minh|nông dân|trí thức|tụ tập|tiếp xúc|cử tri|chuyển trọng tâm|lập trường|chủ nghĩa tư bản|ngày nay|tự tiêu vong|giai cấp vô sản|giai cấp công nhân|khác nhau|mở rộng|xóa bỏ|kinh tế – xã hội|Dân biết|dân bàn|dân làm|dân kiểm tra|đi đôi|tập trung dân chủ|vĩnh viễn hóa|Chủ nghĩa xã hội khoa học|an ninh chính trị|hợp tác|công cụ|phong kiến|chủ nô|địa chủ|sản sinh|thành công|ra đời|kiểu nhà nước|vừa là|Nhà nước XHCN|do nhân dân|vì nhân dân|cộng sản chủ nghĩa|Đảng Cộng sản Việt Nam|CHXHCN Việt Nam|đối với')
+    .split('|').sort((a,b)=>b.length-a.length).map(w=>w.replace(/[.*+?^${}()[\]\\]/g,'\\$&'));
+  const glueRe=new RegExp('(?<![\\p{L}\\p{N}])(?:'+GLUE.join('|')+')(?![\\p{L}\\p{N}])','giu');
+  function glue(root){
+    const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let t;const nodes=[];
+    while(t=w.nextNode())if(/\s/.test(t.nodeValue)&&!t.parentElement.closest('script,style,svg'))nodes.push(t);
+    nodes.forEach(n=>{n.nodeValue=n.nodeValue
+      .replace(glueRe,m=>m.replace(/ /g,'\u00A0').replace(/–\u00A0/g,'–\u2060\u00A0'))   // a dash always allows a break after it; the word joiner keeps "Mác – Lênin" whole
+      .replace(/(?<![\p{L}])(do|của|và|với|các|những|mọi|là|cho|theo|trong|từ|về|để|sự|vì|khi|nhằm|giữa|trên|dưới|qua|một|nay) (?=[\p{L}"(]|$)/giu,'$1\u00A0')   // function words lead the next word
+      .replace(/ ([–&])/g,'\u00A0$1')                     // a line never starts with a dash or ampersand
+      .replace(/(\p{L}) (\d)/gu,'$1\u00A0$2').replace(/(\d) (\p{L})/gu,'$1\u00A0$2');});   // "Điều 4", "7 tiêu chí"
+  }
+  glue(document.getElementById('deck'));
 
   let cur=0;
   const prog=document.getElementById('progress'),counter=document.getElementById('counter');
