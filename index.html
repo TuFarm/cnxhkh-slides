@@ -31,6 +31,8 @@ html,body{height:100%}
 body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:var(--u);line-height:1.55;overflow:hidden;-webkit-tap-highlight-color:transparent}
 *{box-sizing:border-box}
 strong{font-weight:700;color:var(--red)}
+::selection{background:var(--star);color:var(--ink)}
+.inner{scrollbar-width:thin;scrollbar-color:var(--red-25) transparent}
 p{margin:0} ul,ol{margin:0;padding:0;list-style:none}
 figure{margin:0}
 
@@ -82,6 +84,7 @@ h3{font-family:var(--f-label);font-weight:800;color:var(--red);text-transform:up
 .ctrls{display:flex;align-items:center;gap:6px;flex:none}
 .ctrls button{appearance:none;border:1px solid var(--cream-30);background:transparent;color:var(--cream);height:34px;min-width:34px;padding:0 10px;font:600 13px var(--f-body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
 .ctrls button:hover{border-color:var(--cream)}
+@media (pointer:coarse){.ctrls button{height:42px;min-width:42px}}
 .ctrls button:focus-visible{outline:2px solid var(--star);outline-offset:2px}
 .ctrls button[aria-pressed="true"]{background:var(--star);color:var(--ink);border-color:var(--star)}
 .counter{font:700 14px var(--f-body);font-variant-numeric:tabular-nums;min-width:58px;text-align:center}
@@ -89,6 +92,7 @@ h3{font-family:var(--f-label);font-weight:800;color:var(--red);text-transform:up
 /* speaker notes */
 .notes-panel{position:fixed;left:0;right:0;bottom:calc(var(--footer) + env(safe-area-inset-bottom,0px));z-index:19;background:var(--ink);color:var(--cream);padding:16px clamp(16px,4.5vw,80px) 18px;transform:translateY(105%);transition:transform .35s ease;max-height:42vh;overflow-y:auto;border-top:3px solid var(--star)}
 .notes-panel.open{transform:none}
+.notes-panel{scrollbar-width:thin;scrollbar-color:rgba(245,197,24,.45) transparent}
 .notes-panel .lbl{font:800 12px var(--f-label);letter-spacing:.16em;color:var(--star);margin-bottom:6px;text-transform:uppercase}
 .notes-panel .txt{font-family:var(--f-quote);font-style:italic;font-size:clamp(17px,1.15em,23px);line-height:1.65;max-width:110ch}
 aside.notes{display:none}
@@ -151,7 +155,7 @@ aside.notes{display:none}
 .qr figcaption{margin-top:.5em;font-size:var(--t-xs);line-height:1.35;display:flex;flex-direction:column;gap:.15em}
 .qr figcaption b{color:var(--red);font-weight:700}
 .qr figcaption span{color:var(--ink-70);font-variant-numeric:tabular-nums}
-.cover .meta{font-size:var(--t-xs);letter-spacing:.18em;font-weight:700;color:var(--ink-70);text-transform:uppercase}
+.cover .meta{font-size:var(--t-xs);letter-spacing:.18em;font-weight:700;color:var(--ink-70);text-transform:uppercase;text-wrap:balance}
 .cover h1{font-family:var(--f-display);font-weight:900;color:var(--red);text-transform:uppercase;font-size:var(--t-h1);line-height:1.08;letter-spacing:.01em;margin:var(--s1) 0 var(--s2)}
 .cover .sub{font-family:var(--f-quote);font-style:italic;font-size:1.34em;line-height:1.42;border-left:4px solid var(--star);padding-left:var(--s2);max-width:44ch}
 .cover .info{margin-top:var(--s3);display:inline-block;border-top:2px solid var(--red);padding-top:var(--s1);font-weight:600;font-size:var(--t-sm)}
@@ -275,15 +279,17 @@ tbody tr{opacity:0}
 .lq b{font-family:var(--f-body);font-style:normal;font-weight:700}
 .center{display:flex;flex-direction:column;align-items:center;gap:var(--s1)}
 .center .portrait{width:100%}
-.bars{display:grid;gap:.5em;font-size:var(--t-sm);font-weight:700}
-.bar{display:grid;grid-template-columns:13em minmax(0,1fr);align-items:center;gap:var(--s2)}
-.track{height:14px;background:var(--red-12);position:relative;overflow:hidden}
-.fill{position:absolute;inset:0 auto 0 0;width:0}
-.fill.f1{background:var(--ink)}
-.fill.f2{background:var(--red)}
-.slide.active .fill.f1{animation:w1 1s .5s ease forwards}
-.slide.active .fill.f2{animation:w2 1.4s .8s ease forwards}
-@keyframes w1{to{width:32%}} @keyframes w2{to{width:100%}}
+.bars{display:grid;grid-template-columns:13em minmax(0,1fr) auto;align-items:center;gap:.5em var(--s2);font-size:var(--t-sm);font-weight:700}
+/* both bands run the full width: the difference is weight (a hairline means, a solid band decides), never a proportion */
+.bar{display:contents}
+.track{height:14px;display:flex;align-items:center}
+.fill{width:100%;transform:scaleX(0);transform-origin:left center}
+.fill.f1{height:3px;background:var(--ink)}
+.fill.f2{height:14px;background:var(--red)}
+.slide.active .fill.f1{animation:grow 1s .5s ease forwards}
+.slide.active .fill.f2{animation:grow 1.4s .8s ease forwards}
+.bar .role{font:700 1em var(--f-label);color:var(--ink-70);white-space:nowrap}
+.bar .role.strong{color:var(--red)}
 
 /* ===== S12 rule-of-law ===== */
 .law{display:grid;grid-template-columns:clamp(140px,19vw,280px) minmax(0,1fr);gap:var(--s4);align-items:start}
@@ -400,9 +406,9 @@ tbody tr{opacity:0}
 .row3.leaf{padding-block:10px}
 .thp{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;align-items:center}
 .rth{width:76px;height:76px;border-radius:50%;object-fit:cover;border:1px solid var(--red-25)}
-.mbar{height:14px;background:var(--red-12);margin-top:8px;position:relative;overflow:hidden;border-radius:2px}
-.mbar i{position:absolute;inset:0 auto 0 0;background:var(--ink)}
-.mbar.red i{background:var(--red)}
+.mbar{height:14px;margin-top:8px;display:flex;align-items:center}
+.mbar i{display:block;width:100%;height:3px;background:var(--ink)}
+.mbar.red i{height:14px;background:var(--red);border-radius:2px}
 .f6{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:center;padding-block:9px}
 .f6 .num{width:44px;height:48px;display:grid;place-items:center;background:var(--red);color:var(--star);font:900 26px var(--f-display);clip-path:polygon(50% 0,100% 24%,100% 76%,50% 100%,0 76%,0 24%)}
 .cl-src{font-size:.86em;color:var(--ink-70);font-style:italic;opacity:0;transition:opacity .3s}
@@ -479,13 +485,30 @@ tbody tr{opacity:0}
   .timeline{grid-template-columns:1fr}
   .six{grid-template-columns:1fr}
   .vs{grid-template-columns:1fr}
-  .bar{grid-template-columns:1fr;gap:.2em}
+  .bars{display:block}
+  .bar{display:grid;grid-template-columns:1fr auto;gap:.2em var(--s1);margin-top:.5em}
+  .bar .track{grid-column:1/-1;grid-row:2}
+  table{min-width:0;font-size:.92em}
+  thead tr,tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  thead th:first-child,tbody th{grid-column:1/-1}
+  thead th:first-child{display:none}
+  tbody th{width:auto;padding-bottom:.15em;border-bottom:0;color:var(--red);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.04em;font-size:.95em}
+  .tablewrap{overflow-x:visible}
+  .mm-top{margin-bottom:1.6em}
   .concl > li{grid-template-columns:2em minmax(0,1fr);gap:var(--s1) var(--s2)}
   .concl > li p:last-child{grid-column:2}
   .ctrls .hide-s,.footer .dept{display:none}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  /* entrances keep a short fade so each change still reads; travel, zoom and ambient loops stop */
+  *,*::before,*::after{animation-delay:0s!important;transition-delay:0s!important}
+  .slide.active .rv,.slide.active .tl,.slide.active tbody tr,.slide.active .pic,.slide.active .late,.slide.active .br,.slide.active .hub{animation:fade .3s ease both!important}
+  .slide,.slide.past,.slide.active{transform:none!important;transition:opacity .3s ease,visibility 0s!important}
+  .drum,.silk path,.twinkle,.arrows .a,.slide.active .sideimg img,.slide.active .colimg img,.slide.active .smallimg img,.slide.active .strip img,.slide.active .bgimg{animation:none!important}
+  .slide.active .timeline::before,.slide.active .timeline::after,.slide.active .fill,.slide.active .mm-lines path{animation-duration:.01ms!important}
+  .stage{transition:none!important}
+  .leaf,.cl-cap,.cl-src,.cl-lines path,.cl-lines circle{transition-duration:.2s!important}
+  .notes-panel{transition-duration:.15s}
 }
 </style>
 
@@ -821,8 +844,8 @@ tbody tr{opacity:0}
   <div class="inner"><div class="content">
     <h2 class="title">Trọng tâm chức năng: Quan hệ giữa Trấn áp và Tổ chức – Xây dựng</h2>
     <div class="bars rv" aria-hidden="true">
-      <div class="bar"><span>Trấn áp</span><div class="track"><div class="fill f1"></div></div></div>
-      <div class="bar"><span style="color:var(--red)">Tổ chức – xây dựng</span><div class="track"><div class="fill f2"></div></div></div>
+      <div class="bar"><span>Trấn áp</span><div class="track"><div class="fill f1"></div></div><span class="role">Phương tiện – tiền đề</span></div>
+      <div class="bar"><span style="color:var(--red)">Tổ chức – xây dựng</span><div class="track"><div class="fill f2"></div></div><span class="role strong">Căn bản, quyết định nhất</span></div>
     </div>
     <div class="balance">
       <figure class="photo portrait pic"><img src="img2/s11-lenin.jpg" alt="Chân dung V.I. Lênin"><figcaption>V.I. Lênin</figcaption></figure>
@@ -1033,8 +1056,8 @@ tbody tr{opacity:0}
               </div></div>
             <div class="leaf"><p class="lt">Trọng tâm chức năng: Quan hệ giữa Trấn áp và Tổ chức – Xây dựng</p>
               <div class="cols2">
-                <div><p>Trấn áp chỉ là phương tiện – tiền đề bảo vệ</p><div class="mbar"><i style="width:32%"></i></div></div>
-                <div><p><b>Tổ chức, xây dựng là nhiệm vụ căn bản, quyết định nhất</b></p><div class="mbar red"><i style="width:100%"></i></div></div>
+                <div><p>Trấn áp chỉ là phương tiện – tiền đề bảo vệ</p><div class="mbar"><i></i></div></div>
+                <div><p><b>Tổ chức, xây dựng là nhiệm vụ căn bản, quyết định nhất</b></p><div class="mbar red"><i></i></div></div>
               </div></div>
           </div>
         </section>
@@ -1101,7 +1124,7 @@ tbody tr{opacity:0}
     <button id="prev" aria-label="Slide trước">‹</button>
     <span class="counter" id="counter" aria-live="polite" aria-atomic="true">1 / 15</span>
     <button id="next" aria-label="Slide sau">›</button>
-    <button id="notesBtn" aria-pressed="false" title="Ghi chú (N)">N<span class="hide-s">&nbsp;Ghi chú</span></button>
+    <button id="notesBtn" aria-pressed="false" aria-label="Ghi chú" title="Ghi chú (N)">N<span class="hide-s">&nbsp;Ghi chú</span></button>
     <button id="fsBtn" title="Toàn màn hình (F)" aria-label="Toàn màn hình"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 5V1h4M11 1h4v4M15 11v4h-4M5 15H1v-4"/></svg></button>
   </div>
 </footer>
