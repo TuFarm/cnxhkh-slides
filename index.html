@@ -116,7 +116,8 @@ aside.notes{display:none}
 .sideimg img,.colimg img,.smallimg img,.strip img{display:block;width:100%;height:100%;object-fit:cover}
 .slide.active .sideimg img,.slide.active .colimg img,.slide.active .smallimg img,.slide.active .strip img,.slide.active .bgimg{animation:kb 14s ease-out both}
 @keyframes kb{from{transform:scale(1.07)}to{transform:none}}
-.bgimg{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);max-width:none;object-fit:cover;filter:blur(3px);pointer-events:none}
+.bgimg{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);max-width:none;object-fit:cover;pointer-events:none}
+/* the blur is baked into the *-blur.jpg files: a live filter under the 14s zoom re-blurs every frame */
 .veil{position:absolute;inset:0;pointer-events:none}
 .cover .veil{background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 40%,rgba(251,244,226,.78) 66%,rgba(251,244,226,.5) 100%)}
 .end .veil{background:rgba(251,244,226,.86)}
@@ -525,7 +526,7 @@ tbody tr{opacity:0}
 
 <!-- ============ SLIDE 1 ============ -->
 <section class="slide cover">
-  <img class="bgimg" src="img2/s01-quoc-hoi.jpg" alt="" aria-hidden="true">
+  <img class="bgimg" src="img2/s01-quoc-hoi-blur.jpg" alt="" aria-hidden="true">
   <div class="veil"></div>
   <svg class="drum"><use href="#drum"/></svg>
   <svg class="skyline"><use href="#sky"/></svg>
@@ -552,7 +553,7 @@ tbody tr{opacity:0}
 
 <!-- ============ SLIDE 2 ============ -->
 <section class="slide red s2">
-  <img class="bgimg" src="img2/s02-hoi-truong.jpg" alt="" aria-hidden="true">
+  <img class="bgimg" src="img2/s02-hoi-truong-blur.jpg" alt="" aria-hidden="true">
   <div class="veil"></div>
   <svg class="drum"><use href="#drum"/></svg>
   <div class="inner"><div class="content">
@@ -1068,7 +1069,7 @@ tbody tr{opacity:0}
 
 <!-- ============ SLIDE 15 ============ -->
 <section class="slide end">
-  <img class="bgimg" src="img2/s01-quoc-hoi.jpg" alt="" aria-hidden="true">
+  <img class="bgimg" src="img2/s01-quoc-hoi-blur.jpg" alt="" aria-hidden="true">
   <div class="veil"></div>
   <svg class="drum"><use href="#drum"/></svg>
   <svg class="skyline"><use href="#sky"/></svg>
