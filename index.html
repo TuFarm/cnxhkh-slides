@@ -10,7 +10,9 @@
   --ink:#1C1714;
   --red-12:rgba(158,15,15,.12); --red-25:rgba(158,15,15,.25); --red-06:rgba(158,15,15,.06);
   --ink-70:rgba(28,23,20,.72); --ink-15:rgba(28,23,20,.15);
-  --cream-30:rgba(251,244,226,.3);
+  --cream-30:rgba(251,244,226,.3); --cream-50:rgba(251,244,226,.5); --cream-78:rgba(251,244,226,.78);
+  --cream-86:rgba(251,244,226,.86); --cream-88:rgba(251,244,226,.88); --cream-94:rgba(251,244,226,.94);
+  --red-82:rgba(158,15,15,.82); --star-45:rgba(245,197,24,.45);
 
   --f-display:"Big Shoulders Display","Be Vietnam Pro","Arial Narrow",sans-serif;
   --f-label:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif;
@@ -93,7 +95,7 @@ h3{font-family:var(--f-label);font-weight:800;color:var(--red);text-transform:up
 /* speaker notes */
 .notes-panel{position:fixed;left:0;right:0;bottom:calc(var(--footer) + env(safe-area-inset-bottom,0px));z-index:19;background:var(--ink);color:var(--cream);padding:16px clamp(16px,4.5vw,80px) 18px;transform:translateY(105%);transition:transform .35s ease;max-height:42vh;overflow-y:auto;border-top:3px solid var(--star)}
 .notes-panel.open{transform:none}
-.notes-panel{scrollbar-width:thin;scrollbar-color:rgba(245,197,24,.45) transparent}
+.notes-panel{scrollbar-width:thin;scrollbar-color:var(--star-45) transparent}
 .notes-panel .lbl{font:800 12px var(--f-label);letter-spacing:.16em;color:var(--star);margin-bottom:6px;text-transform:uppercase}
 .notes-panel .txt{font-family:var(--f-quote);font-style:italic;font-size:clamp(17px,1.15em,23px);line-height:1.65;max-width:110ch}
 aside.notes{display:none}
@@ -124,9 +126,9 @@ aside.notes{display:none}
 .bgimg{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);max-width:none;object-fit:cover;pointer-events:none}
 /* the blur is baked into the *-blur.jpg files: a live filter under the 14s zoom re-blurs every frame */
 .veil{position:absolute;inset:0;pointer-events:none}
-.cover .veil{background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 40%,rgba(251,244,226,.78) 66%,rgba(251,244,226,.5) 100%)}
-.end .veil{background:rgba(251,244,226,.86)}
-.s2 .veil{background:rgba(158,15,15,.82)}
+.cover .veil{background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 40%,var(--cream-78) 66%,var(--cream-50) 100%)}
+.end .veil{background:var(--cream-86)}
+.s2 .veil{background:var(--red-82)}
 .sideimg{position:absolute;top:0;bottom:var(--footer);width:40%;z-index:0}
 .img-right .sideimg{right:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);mask-image:linear-gradient(90deg,transparent 0,#000 32%)}
 .img-left .sideimg{left:0;-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 32%);mask-image:linear-gradient(270deg,transparent 0,#000 32%)}
@@ -152,7 +154,7 @@ aside.notes{display:none}
 .cover .content{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--s4);padding-bottom:10vh}
 .cover .content > div{max-width:920px}
 .qr{margin:0;background:var(--cream);border:1px solid var(--red-25);border-radius:var(--r);padding:.7em .7em .8em;text-align:center;justify-self:end}
-.qr img{display:block;width:clamp(150px,24vh,300px);height:auto;image-rendering:pixelated;border-radius:2px}
+.qr img{display:block;margin-inline:auto;width:clamp(150px,24vh,300px);height:auto;image-rendering:pixelated;border-radius:2px}
 .qr figcaption{margin-top:.5em;font-size:var(--t-xs);line-height:1.35;display:flex;flex-direction:column;gap:.15em}
 .qr figcaption b{color:var(--red);font-weight:700}
 .qr figcaption span{color:var(--ink-70);font-variant-numeric:tabular-nums}
@@ -169,7 +171,7 @@ aside.notes{display:none}
 .s2 .q{font-family:var(--f-quote);font-style:italic;font-size:clamp(1.32em,1em + 1.1vw,2.1em);line-height:1.4;max-width:52ch}
 .s2 .kicker{font-family:var(--f-label);font-weight:800;color:var(--star);letter-spacing:.14em;text-transform:uppercase;font-size:var(--t-xs);margin-bottom:var(--s1)}
 .agenda{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s4);counter-reset:a}
-.panel{background:rgba(251,244,226,.94);color:var(--ink);border-radius:var(--r);padding:var(--s2) var(--s3) var(--s1)}
+.panel{background:var(--cream-94);color:var(--ink);border-radius:var(--r);padding:var(--s2) var(--s3) var(--s1)}
 .panel .kicker{color:var(--red)}
 .agenda li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:var(--s1);padding:var(--s1) 0;border-top:1px solid var(--red-25);align-items:baseline}
 .agenda .n{font-family:var(--f-display);font-weight:900;color:var(--red);font-size:1.9em;line-height:1}
@@ -320,7 +322,8 @@ tbody tr{opacity:0}
 
 /* ===== S14 mind map =====
    Desktop: a fixed 1800px "stage" laid out once, then scaled/moved by a camera transform.
-   Overview frames the six branches; clicking a branch draws its sub-branches (cluster) outward
+   Overview frames the six branch names only (each branch's summary list stays in the markup for phones);
+   clicking a branch draws its sub-branches (cluster) outward
    and the camera flies to that cluster so the text reads large. Phones: plain stacked accordion. */
 .mmslide .content.mmwrap{flex:1;min-height:0;margin-block:0;max-width:none;gap:var(--s1)}
 .mm-top{position:relative;display:flex;flex-direction:column;align-items:center;gap:.1em;flex:none}
@@ -330,25 +333,26 @@ tbody tr{opacity:0}
 .mm-back:hover{background:var(--red);color:var(--cream)}
 .mm-back:focus-visible,.knob:focus-visible{outline:3px solid var(--star);outline-offset:2px}
 .mmv{position:relative;flex:1;min-height:0;overflow:hidden}
-.stage{position:absolute;left:0;top:0;width:1800px;transform-origin:0 0;transition:transform .95s cubic-bezier(.45,0,.2,1);font-size:22px;line-height:1.42}
+.stage{position:absolute;left:0;top:0;width:1400px;transform-origin:0 0;transition:transform .95s cubic-bezier(.45,0,.2,1);font-size:22px;line-height:1.42}
 .stage.instant{transition:none}
-.mm{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px minmax(0,1.08fr);column-gap:130px;align-items:center}
+.mm{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 320px minmax(0,1fr);column-gap:100px;align-items:center}
 .mm-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0;transition:filter .5s}
 .mm-lines path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
 .mm-lines path.f{stroke-width:3.5}
 .slide.active .mm-lines path{animation:draw .7s ease forwards;animation-delay:calc(var(--k) * .12s + .5s)}
 @keyframes draw{to{stroke-dashoffset:0}}
 .mm-lines circle{fill:var(--star);stroke:var(--red);stroke-width:2}
-.mm-col{display:flex;flex-direction:column;gap:22px;position:relative;z-index:1;min-width:0}
-.br{position:relative;background:var(--cream);border:1px solid var(--red-25);border-radius:var(--r);padding:.6em .9em .7em;opacity:0;cursor:pointer;transition:filter .5s,box-shadow .2s}
+.mm-col{display:flex;flex-direction:column;gap:84px;position:relative;z-index:1;min-width:0}
+.br{position:relative;background:var(--cream);border:1px solid var(--red-25);border-radius:var(--r);padding:.55em 1em;opacity:0;cursor:pointer;transition:filter .5s,box-shadow .2s}
 .br.focus{border:2px solid var(--red)}
 .br:hover{box-shadow:0 0 0 3px var(--red-12)}
 .br.open{z-index:5;box-shadow:0 0 0 4px var(--star)}
 .slide.active .br{animation:fade .6s ease both;animation-delay:calc(var(--k) * .12s + .75s)}
 .mm.focused .br:not(.open),.mm.focused .mm-hub,.mm.focused .mm-lines{filter:opacity(.16)}
 .mm-hub{transition:filter .5s}
-.bh{display:flex;align-items:center;gap:.55em;margin-bottom:.35em}
-.bh h3{margin:0;font-size:1.05em}
+.bh{display:flex;align-items:center;gap:.55em}
+.bh h3{margin:0;font-size:1.45em;line-height:1.15}
+.br > .dash,.br > .cmp{display:none}
 .bn{width:1.7em;height:1.7em;flex:none;display:grid;place-items:center;background:var(--red);color:var(--star);font:900 1.05em var(--f-display);border-radius:50%}
 .bh .tag{margin-left:auto;align-self:center}
 .br .dash li{margin-top:.2em}
@@ -453,7 +457,7 @@ tbody tr{opacity:0}
   .qr{justify-self:start;display:flex;align-items:center;gap:var(--s2);text-align:left;padding:.5em}
   .qr img{width:110px}
   .qr figcaption{margin:0}
-  .cover .veil{background:rgba(251,244,226,.88)}
+  .cover .veil{background:var(--cream-88)}
   .sideimg{position:static;width:100%;height:28vh;order:2;margin-top:var(--s3);border-radius:var(--r);-webkit-mask-image:none!important;mask-image:none!important;flex:none}
   .img-right .inner,.img-left .inner{padding-inline:clamp(16px,4.5vw,80px)}
   .img-left .step{grid-template-columns:1fr}
@@ -471,7 +475,12 @@ tbody tr{opacity:0}
   .mm{grid-template-columns:1fr;row-gap:var(--s2)}
   .mm-hub{order:-1}
   .mm-lines,.cl-lines,.knob,.mm-back{display:none!important}
-  .mm-col{padding-left:1.2em;border-left:3px solid var(--red)}
+  .mm-col{padding-left:1.2em;border-left:3px solid var(--red);gap:22px}
+  .br{padding:.6em .9em .7em}
+  .bh{margin-bottom:.35em}
+  .bh h3{font-size:1.05em}
+  .br > .dash{display:block}
+  .br > .cmp{display:grid}
   .mm.focused .br:not(.open),.mm.focused .mm-hub,.mm.focused .mm-lines{filter:none}
   .cl{position:static;visibility:visible;display:none;width:auto!important;font-size:.9em;margin-top:.8em;gap:.6em}
   .br.open .cl{display:flex}
@@ -763,10 +772,10 @@ tbody tr{opacity:0}
       </div>
       <div class="arrows rv" aria-hidden="true">
         <svg viewBox="0 0 120 100">
-          <path class="a" d="M8 36H102" stroke="#9E0F0F" stroke-width="4" fill="none"/>
-          <path d="M100 26l14 10-14 10z" fill="#9E0F0F"/>
-          <path class="a b" d="M112 64H18" stroke="#1C1714" stroke-width="4" fill="none"/>
-          <path d="M20 54L6 64l14 10z" fill="#1C1714"/>
+          <path class="a" d="M8 36H102" style="stroke:var(--red)" stroke-width="4" fill="none"/>
+          <path d="M100 26l14 10-14 10z" style="fill:var(--red)"/>
+          <path class="a b" d="M112 64H18" style="stroke:var(--ink)" stroke-width="4" fill="none"/>
+          <path d="M20 54L6 64l14 10z" style="fill:var(--ink)"/>
         </svg>
       </div>
       <div class="node rv">
@@ -987,13 +996,13 @@ tbody tr{opacity:0}
           <svg class="cl-lines" aria-hidden="true"></svg>
           <div class="cl" style="width:1420px">
             <div class="cl-cap"><span class="bn">3</span>Bản chất</div>
-            <div class="leaf has-th"><img class="th" src="img2/s05-bau-cu.jpg" alt=""><div><p class="lt">Chính trị</p>
+            <div class="leaf has-th"><img class="th" src="img2/s05-bau-cu.jpg" alt="Tranh cổ động: cử tri các tầng lớp bỏ phiếu bầu cử"><div><p class="lt">Chính trị</p>
               <div class="chips"><span>Mang bản chất giai cấp công nhân</span><span>Sự thống trị của đa số đối với thiểu số</span><span>Đại biểu cho quyền lực và ý chí nhân dân</span></div></div></div>
-            <div class="leaf has-th"><img class="th" src="img2/s06-nha-may.jpg" alt=""><div><p class="lt">Kinh tế</p>
+            <div class="leaf has-th"><img class="th" src="img2/s06-nha-may.jpg" alt="Dây chuyền sản xuất trong nhà máy hiện đại"><div><p class="lt">Kinh tế</p>
               <div class="chips"><span>Chế độ sở hữu xã hội (công hữu) về tư liệu sản xuất chủ yếu</span><span>Xóa bỏ gốc rễ bóc lột</span><span>Phân phối theo lao động là chủ đạo</span><span>Kiểu tổ chức lao động mới có <span class="mark">năng suất cao hơn CNTB</span></span></div></div></div>
-            <div class="leaf has-th"><img class="th" src="img2/s07-van-mieu.jpg" alt=""><div><p class="lt">Văn hóa – tư tưởng và xã hội</p>
+            <div class="leaf has-th"><img class="th" src="img2/s07-van-mieu.jpg" alt="Khuê Văn Các, Văn Miếu – Quốc Tử Giám"><div><p class="lt">Văn hóa – tư tưởng và xã hội</p>
               <div class="chips"><span>Hệ tư tưởng Mác – Lênin làm nền tảng tinh thần chủ đạo</span><span>Bản sắc văn hóa dân tộc</span><span>Con người mới XHCN</span><span>Thu hẹp khoảng cách giữa các giai cấp, tầng lớp</span><span>Bình đẳng trong tiếp cận các nguồn lực và cơ hội phát triển toàn diện</span></div></div></div>
-            <div class="leaf has-th"><img class="th" src="img2/s08-tiep-xuc-cu-tri.jpg" alt=""><div><p class="lt">Mắt xích biện chứng: Dân chủ XHCN &amp; Nhà nước XHCN</p>
+            <div class="leaf has-th"><img class="th" src="img2/s08-tiep-xuc-cu-tri.jpg" alt="Đại biểu Quốc hội tiếp xúc cử tri"><div><p class="lt">Mắt xích biện chứng: Dân chủ XHCN &amp; Nhà nước XHCN</p>
               <div class="chips"><span>Dân chủ XHCN là cơ sở, nền tảng của Nhà nước XHCN</span><span class="arr">↔</span><span>Nhà nước XHCN là công cụ thực thi quyền làm chủ của nhân dân</span></div></div></div>
           </div>
         </section>
@@ -1048,8 +1057,8 @@ tbody tr{opacity:0}
             <div class="cl-cap"><span class="bn">5</span>Chức năng</div>
             <div class="leaf"><p class="lt">Căn cứ vào phạm vi tác động của quyền lực:</p>
               <div class="cols2">
-                <p class="thp"><img class="rth" src="img2/s10-doi-noi.jpg" alt=""><span><b>Đối nội:</b> Quản lý kinh tế, duy trì an ninh chính trị, phát triển văn hóa, giáo dục, an sinh xã hội.</span></p>
-                <p class="thp"><img class="rth" src="img2/s10-doi-ngoai.jpg" alt=""><span><b>Đối ngoại:</b> Bảo vệ độc lập chủ quyền, mở rộng hợp tác hữu nghị quốc tế, hội nhập toàn cầu.</span></p>
+                <p class="thp"><img class="rth" src="img2/s10-doi-noi.jpg" alt="Lực lượng làm nhiệm vụ bảo vệ an ninh"><span><b>Đối nội:</b> Quản lý kinh tế, duy trì an ninh chính trị, phát triển văn hóa, giáo dục, an sinh xã hội.</span></p>
+                <p class="thp"><img class="rth" src="img2/s10-doi-ngoai.jpg" alt="Hoạt động ngoại giao cấp cao"><span><b>Đối ngoại:</b> Bảo vệ độc lập chủ quyền, mở rộng hợp tác hữu nghị quốc tế, hội nhập toàn cầu.</span></p>
               </div></div>
             <div class="leaf"><p class="lt">Căn cứ vào lĩnh vực hoạt động:</p>
               <p>Chức năng chính trị, kinh tế, văn hóa, xã hội...</p></div>
